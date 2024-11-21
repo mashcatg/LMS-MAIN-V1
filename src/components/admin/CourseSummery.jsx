@@ -45,7 +45,7 @@ export default function CourseCarousel() {
   return (
     <div className="relative w-full md:w-1/3 mx-auto p-4 rounded-lg bg-gradient-to-r from-primary to-secondary">
       {/* Course Slide */}
-      <div className="z-5 absolute inset-0 bg-opacity-90 bg-[url("https://www.transparenttextures.com/patterns/gplay.png")]"></div>
+      <div className="z-5 absolute inset-0 bg-opacity-90 bg-[url('https://www.transparenttextures.com/patterns/gplay.png')]"></div>
       <div className="absolute inset-0 bg-black opacity-10 z-[2] rounded-lg"></div>
 
       <div className="relative overflow-hidden h-64 z-10">

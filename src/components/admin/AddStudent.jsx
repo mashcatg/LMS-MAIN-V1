@@ -225,10 +225,10 @@ const closeSidebar = () => {
             />
           </div>
 
-          {/* Father"s Name */}
+          {/* father&apos;s Name */}
           <div className="relative w-full my-6">
             <label className="absolute -top-2 left-2 bg-white px-1 text-xs text-gray-600">
-              Father"s Name
+              father&apos;s Name
             </label>
             <input
               type="text"
@@ -236,13 +236,13 @@ const closeSidebar = () => {
               value={formData.fathersName}
               onChange={handleInputChange}
               className="border text-md h-full rounded-md w-full px-3 py-2 focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent"
-              placeholder="Enter Father"s Name"
+              placeholder="Enter father&apos;s Name"
             />
           </div>
 
           <div className="relative w-full my-6">
             <label className="absolute -top-2 left-2 bg-white px-1 text-xs text-gray-600">
-              Father"s Phone Number
+              father&apos;s Phone Number
             </label>
             <input
               type="text"
@@ -250,14 +250,14 @@ const closeSidebar = () => {
               value={formData.fathersPhoneNumber}
               onChange={handleInputChange}
               className="border text-md h-full rounded-md w-full px-3 py-2 focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent"
-              placeholder="Enter Father"s Phone Number"
+              placeholder="Enter father&apos;s Phone Number"
             />
           </div>
 
-          {/* Mother"s Name */}
+          {/* mother&apos;s Name */}
           <div className="relative w-full my-6">
             <label className="absolute -top-2 left-2 bg-white px-1 text-xs text-gray-600">
-              Mother"s Name
+              mother&apos;s Name
             </label>
             <input
               type="text"
@@ -265,13 +265,13 @@ const closeSidebar = () => {
               value={formData.mothersName}
               onChange={handleInputChange}
               className="border text-md h-full rounded-md w-full px-3 py-2 focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent"
-              placeholder="Enter Mother"s Name"
+              placeholder="Enter mother&apos;s Name"
             />
           </div>
 
           <div className="relative w-full my-6">
             <label className="absolute -top-2 left-2 bg-white px-1 text-xs text-gray-600">
-              Mother"s Phone Number
+              mother&apos;s Phone Number
             </label>
             <input
               type="text"
@@ -279,7 +279,7 @@ const closeSidebar = () => {
               value={formData.mothersPhoneNumber}
               onChange={handleInputChange}
               className="border text-md h-full rounded-md w-full px-3 py-2 focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent"
-              placeholder="Enter Mother"s Phone Number"
+              placeholder="Enter mother&apos;s Phone Number"
             />
           </div>
 
