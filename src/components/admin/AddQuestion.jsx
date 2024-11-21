@@ -1,8 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import QuizOption from "./QuizOption";
 import "draft-js/dist/Draft.css";
 import QuizQuestion from "./QuizQuestion";
-import QuizOption from "./QuizOption";
 import { Button } from "../ui/button";
 import QuizQuestionSolution from "./QuizQuestionSolution";
 
