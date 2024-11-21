@@ -9,7 +9,9 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:next/recommended",
-    "next/core-web-configs"
+    "next/core-web-configs",
+    "next/core-web-vitals",
+    "eslint:recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -32,7 +34,7 @@
     "react/prop-types": "off", 
     "import/no-unresolved": "off",
     "no-console": "warn", 
-    "react/react-in-jsx-scope": "off" 
+    "react/react-in-jsx-scope": "off"
   },
   "settings": {
     "react": {
