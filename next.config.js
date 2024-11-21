@@ -12,4 +12,4 @@ const config = {
   reactStrictMode: true,
 };
 
-export default config;
+module.exports = config;
