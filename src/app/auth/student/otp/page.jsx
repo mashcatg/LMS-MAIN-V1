@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import { useRouter, useSearchParams } from "next/navigation";
 
@@ -67,6 +67,7 @@ export default function OTPVerification() {
   }
 
   return (
+    <Suspense fallback={<div>Loading...</div>}>
     <div className="w-full min-h-[100vh] lg:grid lg:grid-cols-2">
       <div className="flex items-center justify-center py-12">
         <div className="mx-auto grid w-[350px] gap-6">
@@ -123,5 +124,6 @@ export default function OTPVerification() {
       </div>
       <div className="hidden lg:block h-full w-full object-cover dark:brightness-[0.2] dark:grayscale bg-primary"></div>
     </div>
+    </Suspense>
   );
 }

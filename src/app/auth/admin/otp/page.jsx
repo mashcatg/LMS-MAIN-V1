@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 
 export default function Dashboard() {
     
@@ -79,6 +79,7 @@ export default function Dashboard() {
     };
 
     return (
+        <Suspense fallback={<div>Loading...</div>}>
         <div className="w-full min-h-[100vh] lg:grid lg:grid-cols-2">
             <div className="hidden lg:block h-full w-full object-cover bg-primary"></div>
             <div className="flex items-center justify-center py-12">
@@ -122,5 +123,6 @@ export default function Dashboard() {
             </div>
             
         </div>
+        </Suspense>
     );
 }
