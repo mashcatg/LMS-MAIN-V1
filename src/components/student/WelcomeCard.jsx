@@ -32,7 +32,7 @@ const WelcomeCard = () => {
       <div className="absolute inset-0 bg-black opacity-50 z-[2] rounded-lg"></div>
 
       {/* Subtle animated background effect */}
-      <div className="z-5 absolute inset-0 bg-opacity-90 bg-[url("https://www.transparenttextures.com/patterns/cubes.png")]"></div>
+      <div className="z-5 absolute inset-0 bg-opacity-90 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
 
       <div className="flex flex-col justify-center p-4">
         {/* Card Header */}

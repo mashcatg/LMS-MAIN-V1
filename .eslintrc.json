@@ -23,7 +23,7 @@
   ],
   "rules": {
     "react-hooks/exhaustive-deps": "off", // Manage deps manually
-    "@next/next/no-img-element": "off", // Allow <img> tags
+    "@next/next/no-img-element": "off", // tags
     "react/no-unescaped-entities": "off", // Allow unescaped entities in JSX
     "react/jsx-key": "off", // Disable key checks temporarily
     "no-unused-vars": "warn", // Warn for unused vars
