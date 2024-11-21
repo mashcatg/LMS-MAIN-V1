@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { useRouter } from 'next/navigation'; // For route navigation
-import { CheckCircle, XCircle, AlertTriangle } from 'lucide-react'; // Lucid React Icons
+import { useRouter } from "next/navigation"; // For route navigation
+import { CheckCircle, XCircle, AlertTriangle } from "lucide-react"; // Lucid React Icons
 
 export default function LastAttempt({ params }) {
   const { quiz_id } = params;
@@ -109,13 +109,13 @@ export default function LastAttempt({ params }) {
                 ))}
               </div>
 
-              {/* Show user's submitted answer */}
+              {/* Show user"s submitted answer */}
               <div className="mt-4">
                 <strong>Your Answer:</strong> <span>{question.submitted_answer}</span>
               </div>
 
               {/* Show if answer was correct or incorrect */}
-              <div className={`mt-2 ${question.submitted_answer === question.correct_answer ? 'text-green-500' : 'text-red-500'}`}>
+              <div className={`mt-2 ${question.submitted_answer === question.correct_answer ? "text-green-500" : "text-red-500"}`}>
                 {question.submitted_answer === question.correct_answer ? (
                   <CheckCircle className="inline-block mr-2" />
                 ) : (

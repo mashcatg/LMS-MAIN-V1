@@ -71,7 +71,7 @@ const AddNote = ({ onNoteAdded, note, setEditingNote }) => {
         const selectedIds = selectedOptions.map(option => option.value);
         setSelectedCourseIds(selectedIds);
         if (selectedIds.length) {
-            const courseIds = selectedIds.join(',');
+            const courseIds = selectedIds.join(",");
             fetch(`http://localhost/lms-admin/batches/fetch_course_batch.php?course_ids=${courseIds}`, {
                 credentials: "include",
             })
@@ -101,8 +101,8 @@ const AddNote = ({ onNoteAdded, note, setEditingNote }) => {
         const formData = new FormData();
         formData.append("note_name", noteName);
         formData.append("note_tags", selectedTagsStr);
-        formData.append("course_id", selectedCourseIdsStr || '');
-        formData.append("batch_id", selectedBatchIdsStr || '');
+        formData.append("course_id", selectedCourseIdsStr || "");
+        formData.append("batch_id", selectedBatchIdsStr || "");
 
         // Only append the file if it is selected
         if (file) {

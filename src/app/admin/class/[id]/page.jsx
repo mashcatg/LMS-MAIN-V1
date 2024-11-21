@@ -280,7 +280,7 @@ export default function Classes() {
                               {classItem.class_description}
                             </TableCell>
                             <TableCell className="p-2 font-medium text-gray-800">
-                              {classItem.note_names ? classItem.note_names.join(', ') : 'No Notes'}
+                              {classItem.note_names ? classItem.note_names.join(", ") : "No Notes"}
                             </TableCell>
                             <TableCell className="p-2 font-medium text-gray-800">
                               <a

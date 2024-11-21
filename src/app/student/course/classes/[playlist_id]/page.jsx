@@ -9,7 +9,7 @@ const ClassesPage = () => {
   const [error, setError] = useState(""); // State to store error messages
   const [playlistId, setPlaylistId] = useState(null);
 
-  // Get playlistId from URL (assuming you're using dynamic routes)
+  // Get playlistId from URL (assuming you"re using dynamic routes)
   useEffect(() => {
     const url = new URL(window.location.href);
     const id = url.pathname.split("/").pop();
@@ -71,7 +71,7 @@ const ClassesPage = () => {
                 {/* Card Content */}
                 <div className="relative h-60">
                   <img
-                    src={classItem.class_thumbnail || '/default-thumbnail.jpg'} // Default thumbnail if none exists
+                    src={classItem.class_thumbnail || "/default-thumbnail.jpg"} // Default thumbnail if none exists
                     alt={classItem.class_name}
                     className="w-full h-full object-cover"
                   />

@@ -20,15 +20,15 @@ export default function ChangeProfile() {
   useEffect(() => {
     const fetchProfileData = async () => {
       try {
-        const response = await fetch('http://localhost/lms-admin/profile.php', {
-            method: 'GET',
-            credentials: 'include', 
+        const response = await fetch("http://localhost/lms-admin/profile.php", {
+            method: "GET",
+            credentials: "include", 
         });
 
         const data = await response.json();
         console.log(data);
         if (data.error) {
-            console.error('Failed to fetch profile data:', data.error);
+            console.error("Failed to fetch profile data:", data.error);
         } else {
             setFormData({
               admin_name: data.admin_name,
@@ -37,7 +37,7 @@ export default function ChangeProfile() {
             });
         }
       } catch (err) {
-          console.error('An error occurred during profile data fetch:', err);
+          console.error("An error occurred during profile data fetch:", err);
       }
     };
 
@@ -87,12 +87,12 @@ export default function ChangeProfile() {
     }
 
     try {
-      const response = await fetch('http://localhost/lms-admin/edit-profile.php', {
-        method: 'POST',
+      const response = await fetch("http://localhost/lms-admin/edit-profile.php", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        credentials: 'include',
+        credentials: "include",
         body: JSON.stringify({
           adminName: formData.admin_name,
           adminNumber: formData.admin_number,
@@ -103,14 +103,14 @@ export default function ChangeProfile() {
       if (data.error) {
         alert(`Error changing profile: ${data.error}`);
       } else {
-        alert('Profile updated successfully');
+        alert("Profile updated successfully");
         setFormData({
           admin_password: "",
         });
       }
     } catch (error) {
-      console.error('Error changing profile:', error);
-      alert('Failed to change profile. Please try again later.');
+      console.error("Error changing profile:", error);
+      alert("Failed to change profile. Please try again later.");
     }
   };
 

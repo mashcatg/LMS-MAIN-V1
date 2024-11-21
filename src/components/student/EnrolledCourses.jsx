@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { School, BookPlus, ChevronRight } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
@@ -6,15 +6,15 @@ import Link from "next/link";
 
 export default function EnrolledCourses() {
   const [courses, setCourses] = useState([]);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [coursesEnrolled, setCoursesEnrolled] = useState([]);
   
 // Fetch notes function, moved outside useEffect
 const fetchCourses = async () => {
   try {
-    const response = await fetch('https://youthsthought.com/lms-backend/student-panel/courses/fetch_all_courses.php', {
-      method: 'GET',
-      credentials: 'include',
+    const response = await fetch("https://youthsthought.com/lms-backend/student-panel/courses/fetch_all_courses.php", {
+      method: "GET",
+      credentials: "include",
     });
     const data = await response.json();
     console.log(data);
@@ -24,8 +24,8 @@ const fetchCourses = async () => {
       setCourses(data.courses || []);
     }
   } catch (error) {
-    console.error('Error fetching courses:', error);
-    setError('Error fetching courses');
+    console.error("Error fetching courses:", error);
+    setError("Error fetching courses");
   }
 };
   // Fetch courses on component mount
@@ -34,9 +34,9 @@ const fetchCourses = async () => {
   }, []);
   const fetchEnrolledCourses = async () => {
     try {
-      const response = await fetch('https://youthsthought.com/lms-backend/student-panel/courses/fetch_enrolled_courses.php', {
-        method: 'GET',
-        credentials: 'include',
+      const response = await fetch("https://youthsthought.com/lms-backend/student-panel/courses/fetch_enrolled_courses.php", {
+        method: "GET",
+        credentials: "include",
       });
       const data = await response.json();
       console.log("Enrolled Courses Response:", data);
@@ -48,8 +48,8 @@ const fetchCourses = async () => {
         console.log("Updated coursesEnrolled state:", data.coursesEnrolled);
       }
     } catch (error) {
-      console.error('Error fetching courses:', error);
-      setError('Error fetching courses');
+      console.error("Error fetching courses:", error);
+      setError("Error fetching courses");
     }
   };
   useEffect(() => {
@@ -57,11 +57,11 @@ const fetchCourses = async () => {
   }, [])
   const handleOpenPortal = async (course_id) => {
     try {
-      const response = await fetch('https://youthsthought.com/lms-backend/student-panel/courses/set_course.php', {
-        method: 'POST',
-        credentials: 'include', // to send cookies
+      const response = await fetch("https://youthsthought.com/lms-backend/student-panel/courses/set_course.php", {
+        method: "POST",
+        credentials: "include", // to send cookies
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
+          "Content-Type": "application/x-www-form-urlencoded",
         },
         body: new URLSearchParams({
           course_id: course_id,
@@ -77,7 +77,7 @@ const fetchCourses = async () => {
         console.error(data.message);
       }
     } catch (error) {
-      console.error('Error opening portal:', error);
+      console.error("Error opening portal:", error);
     }
   };
   return (

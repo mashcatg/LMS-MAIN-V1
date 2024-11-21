@@ -28,9 +28,9 @@ const NotificationSidebar = ({
         const data = await response.json();
         console.log(data); // Check the data structure in the console
         
-        // Check if the response contains the 'notices' array
+        // Check if the response contains the "notices" array
         if (data.notices && Array.isArray(data.notices)) {
-          setNotices(data.notices);  // Set the notices from the 'notices' key
+          setNotices(data.notices);  // Set the notices from the "notices" key
         } else {
           throw new Error("Invalid data format");
         }
@@ -71,13 +71,13 @@ const NotificationSidebar = ({
             className="flex flex-col p-2 border-b border-gray-200"
           >
             <span className="text-xs text-gray-500">
-  {new Date(notice.notice_time).toLocaleDateString('en-GB', {
-    day: '2-digit',
-    month: 'long',
-    year: 'numeric'
-  })} at {new Date(notice.notice_time).toLocaleTimeString('en-GB', {
-    hour: '2-digit',
-    minute: '2-digit',
+  {new Date(notice.notice_time).toLocaleDateString("en-GB", {
+    day: "2-digit",
+    month: "long",
+    year: "numeric"
+  })} at {new Date(notice.notice_time).toLocaleTimeString("en-GB", {
+    hour: "2-digit",
+    minute: "2-digit",
     hour12: true
   })}
 </span>

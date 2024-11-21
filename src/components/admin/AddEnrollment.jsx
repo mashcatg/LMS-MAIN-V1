@@ -113,8 +113,8 @@ const AddEnrollment = ({ isFormOpen, onEnrollmentAdded, editData, onClose }) => 
       course_id: selectedCourse,
       batch_id: selectedBatch,
       course_fee: courseFee, // Send course fee to the backend
-      paid_amount: isEditMode ? null : paidAmount, // Don't send paid amount if in edit mode
-      discounted_amount: isEditMode ? null : discountedAmount, // Don't send discounted amount if in edit mode
+      paid_amount: isEditMode ? null : paidAmount, // Don"t send paid amount if in edit mode
+      discounted_amount: isEditMode ? null : discountedAmount, // Don"t send discounted amount if in edit mode
     };
     
     try {

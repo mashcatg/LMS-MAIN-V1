@@ -1,31 +1,31 @@
-'use client';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import { Button } from '@/components/ui/button';
-import { useState, useEffect } from 'react';
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
 
 export default function Dashboard() {
-    const [error, setError] = useState('');
+    const [error, setError] = useState("");
     const [loading, setLoading] = useState(true);
     const router = useRouter();
 
     useEffect(() => {
         const checkAuth = async () => {
             try {
-                const response = await fetch('http://localhost/lms-admin/check_auth.php', {
-                    method: 'GET',
-                    credentials: 'include',
+                const response = await fetch("http://localhost/lms-admin/check_auth.php", {
+                    method: "GET",
+                    credentials: "include",
                 });
                 const data = await response.json();
                 console.log(data);
                 if (!data.logged_in) {
                     setLoading(false);
                 } else {
-                    router.push('/admin/');
+                    router.push("/admin/");
                 }
             } catch (error) {
-                console.error('Error checking authentication:', error);
+                console.error("Error checking authentication:", error);
                 setLoading(false);
             }
         };
@@ -34,8 +34,8 @@ export default function Dashboard() {
     }, [router]);
 
     const [formData, setFormData] = useState({
-        phone: '',
-        password: '',
+        phone: "",
+        password: "",
     });
 
     const handleChange = (e) => {
@@ -50,28 +50,28 @@ export default function Dashboard() {
         e.preventDefault();
 
         const urlEncodedData = new URLSearchParams();
-        urlEncodedData.append('phone', formData.phone);
-        urlEncodedData.append('password', formData.password);
+        urlEncodedData.append("phone", formData.phone);
+        urlEncodedData.append("password", formData.password);
 
         try {
-            const response = await fetch('http://localhost/lms-admin/login.php', {
-                method: 'POST',
+            const response = await fetch("http://localhost/lms-admin/login.php", {
+                method: "POST",
                 headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
+                    "Content-Type": "application/x-www-form-urlencoded",
                 },
                 body: urlEncodedData.toString(),
-                credentials: 'include',
+                credentials: "include",
             });
 
             const data = await response.json();
             if (data.success) {
                 // Server should set the token cookie
-                router.push('/admin/');
+                router.push("/admin/");
             } else {
-                setError(data.message || 'Invalid Credentials. Please try again.');
+                setError(data.message || "Invalid Credentials. Please try again.");
             }
         } catch (err) {
-            setError('An error occurred. Please try again.');
+            setError("An error occurred. Please try again.");
         }
     };
 

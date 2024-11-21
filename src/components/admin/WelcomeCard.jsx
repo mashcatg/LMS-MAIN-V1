@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from "react";
 
 const WelcomeCard = () => {
-  const [user, setUser] = useState({admin_name: '', admin_number: ''});
+  const [user, setUser] = useState({admin_name: "", admin_number: ""});
   useEffect(() => {
   const fetchProfileData = async () => {
     try {
-      const response = await fetch('http://localhost/lms-admin/profile.php', {
-          method: 'GET',
-          credentials: 'include', 
+      const response = await fetch("http://localhost/lms-admin/profile.php", {
+          method: "GET",
+          credentials: "include", 
       });
 
       const data = await response.json();
       console.log(data);
       if (data.error) {
-          console.error('Failed to fetch profile data:', data.error);
+          console.error("Failed to fetch profile data:", data.error);
       } else {
           setUser({admin_name: data.admin_name, admin_number: data.admin_number});
       }
     } catch (err) {
-        console.error('An error occurred during profile data fetch:', err);
+        console.error("An error occurred during profile data fetch:", err);
     }
   };
 
@@ -29,7 +29,7 @@ const WelcomeCard = () => {
       <div className="absolute inset-0 bg-black opacity-50 z-[2] rounded-lg"></div>
 
       {/* Subtle animated background effect */}
-      <div className="z-5 absolute inset-0 bg-opacity-90 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+      <div className="z-5 absolute inset-0 bg-opacity-90 bg-[url("https://www.transparenttextures.com/patterns/cubes.png")]"></div>
 
       <div className="flex flex-col justify-center">
         {/* Card Header */}
@@ -42,7 +42,7 @@ const WelcomeCard = () => {
         {/* Card Content */}
         <div className="mt-4 relative z-10">
           <p className="text-white text-sm">
-            Here's an overview of your recent activity and stats.
+            Here"s an overview of your recent activity and stats.
           </p>
         </div>
       </div>

@@ -32,21 +32,21 @@ export default function ProfileSidebar({ onClose, isClosing }) {
   }, []);
   const handleLogout = async () => {
     try {
-        const response = await fetch('https://www.youthsthought.com/lms-backend/student-panel/student-auth/logout.php', {
-            method: 'POST',
-            credentials: 'include',
+        const response = await fetch("https://www.youthsthought.com/lms-backend/student-panel/student-auth/logout.php", {
+            method: "POST",
+            credentials: "include",
         });
 
         const data = await response.json();
 
         if (data.error) {
-            console.error('Logout failed:', data.error);
+            console.error("Logout failed:", data.error);
         } else {
             // Redirect the user to the login page or homepage after logout
-            router.push('/auth/admin/login');
+            router.push("/auth/admin/login");
         }
     } catch (err) {
-        console.error('An error occurred during logout:', err);
+        console.error("An error occurred during logout:", err);
     }
   };
 

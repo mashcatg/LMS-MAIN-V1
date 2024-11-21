@@ -5,8 +5,8 @@ import { Button } from "../ui/button";
 const AddNotice = ({ onNoticeAdded }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [error, setError] = useState(null);
-  const [notice, setNotice] = useState('');
-  const [noticeType, setNoticeType] = useState('Public'); // Default notice type
+  const [notice, setNotice] = useState("");
+  const [noticeType, setNoticeType] = useState("Public"); // Default notice type
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -34,7 +34,7 @@ const AddNotice = ({ onNoticeAdded }) => {
       if (data.success) {
         alert(data.message);
         closeSidebar();
-        setNotice('');
+        setNotice("");
         onNoticeAdded(); // Trigger the callback to refresh notices
       } else {
         alert(data.message);

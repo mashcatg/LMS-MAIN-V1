@@ -37,7 +37,7 @@ import AddLiveClass from "@/components/admin/AddLiveClass";
 export default function LiveClasses() {
   const [liveClasses, setLiveClasses] = useState([]);
   const [editingLiveClass, setEditingLiveClass] = useState(null);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
   const itemsPerPage = 10;
@@ -61,9 +61,9 @@ export default function LiveClasses() {
 
   const fetchLiveClasses = async () => {
     try {
-      const response = await fetch('http://localhost/lms-admin/live-classes/fetch_live_classes.php', {
-        method: 'GET',
-        credentials: 'include',
+      const response = await fetch("http://localhost/lms-admin/live-classes/fetch_live_classes.php", {
+        method: "GET",
+        credentials: "include",
       });
 
       if (!response.ok) {
@@ -75,11 +75,11 @@ export default function LiveClasses() {
       if (data.success) {
         setLiveClasses(data.live_classes || []);
       } else {
-        setError(data.message || 'Failed to fetch live classes');
+        setError(data.message || "Failed to fetch live classes");
       }
     } catch (error) {
-      console.error('Error fetching live classes:', error);
-      setError('Failed to fetch live classes. Please try again later.');
+      console.error("Error fetching live classes:", error);
+      setError("Failed to fetch live classes. Please try again later.");
     }
   };
 
@@ -99,10 +99,10 @@ export default function LiveClasses() {
     if (confirm("Are you sure you want to delete this live class?")) {
       try {
         const response = await fetch(`http://localhost/lms-admin/live-classes/delete_live_class.php?live_class_id=${liveClassId}`, {
-          method: 'POST', // Changed from DELETE to POST as it's more common for PHP scripts
-          credentials: 'include',
+          method: "POST", // Changed from DELETE to POST as it"s more common for PHP scripts
+          credentials: "include",
           headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
+            "Content-Type": "application/x-www-form-urlencoded",
           },
           body: `live_class_id=${liveClassId}`,
         });
@@ -115,7 +115,7 @@ export default function LiveClasses() {
           alert("Failed to delete live class.");
         }
       } catch (error) {
-        console.error('Error deleting live class:', error);
+        console.error("Error deleting live class:", error);
         alert("Failed to delete live class. Please try again later.");
       }
     }
@@ -159,8 +159,8 @@ export default function LiveClasses() {
                 <TableRow key={live_class.live_class_id} className="hover:bg-gray-100 transition duration-200 ease-in-out">
                   <TableCell className="p-4 font-medium text-gray-800">{live_class.live_class_name}</TableCell>
                   <TableCell className="p-4 font-medium text-gray-800">{live_class.live_class_desc}</TableCell>
-                  <TableCell className="p-4 font-medium text-gray-800">{live_class.course_name || 'No courses available'}</TableCell>
-                  <TableCell className="p-4 font-medium text-gray-800">{live_class.batch_name || 'No batches available'}</TableCell>
+                  <TableCell className="p-4 font-medium text-gray-800">{live_class.course_name || "No courses available"}</TableCell>
+                  <TableCell className="p-4 font-medium text-gray-800">{live_class.batch_name || "No batches available"}</TableCell>
                   <TableCell className="p-4 text-right">
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>

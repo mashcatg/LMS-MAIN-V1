@@ -11,15 +11,15 @@ export default function ProfileSidebar({ onClose, isClosing }) {
   useEffect(() => {
     const fetchProfileData = async () => {
       try {
-        const response = await fetch('http://localhost/lms-admin/profile.php', {
-            method: 'GET',
-            credentials: 'include', 
+        const response = await fetch("http://localhost/lms-admin/profile.php", {
+            method: "GET",
+            credentials: "include", 
         });
 
         const data = await response.json();
         console.log(data);
         if (data.error) {
-            console.error('Failed to fetch profile data:', data.error);
+            console.error("Failed to fetch profile data:", data.error);
         } else {
             setUser({
               name: data.admin_name,
@@ -27,7 +27,7 @@ export default function ProfileSidebar({ onClose, isClosing }) {
             });
         }
       } catch (err) {
-          console.error('An error occurred during profile data fetch:', err);
+          console.error("An error occurred during profile data fetch:", err);
       }
     };
 
@@ -36,21 +36,21 @@ export default function ProfileSidebar({ onClose, isClosing }) {
 
   const handleLogout = async () => {
     try {
-        const response = await fetch('http://localhost/lms-admin/logout.php', {
-            method: 'POST',
-            credentials: 'include',
+        const response = await fetch("http://localhost/lms-admin/logout.php", {
+            method: "POST",
+            credentials: "include",
         });
 
         const data = await response.json();
 
         if (data.error) {
-            console.error('Logout failed:', data.error);
+            console.error("Logout failed:", data.error);
         } else {
             // Redirect the user to the login page or homepage after logout
-            router.push('/auth/admin/login');
+            router.push("/auth/admin/login");
         }
     } catch (err) {
-        console.error('An error occurred during logout:', err);
+        console.error("An error occurred during logout:", err);
     }
   };
 
@@ -84,7 +84,7 @@ export default function ProfileSidebar({ onClose, isClosing }) {
         <Button
           className="w-full mt-4 flex items-center justify-center"
           variant="secondary"
-          onClick={() => {router.push('/admin/edit-profile/');}}
+          onClick={() => {router.push("/admin/edit-profile/");}}
         >
           <Edit className="mr-2 w-4 h-4" />
           Edit Profile
@@ -94,7 +94,7 @@ export default function ProfileSidebar({ onClose, isClosing }) {
         <Button
           className="w-full mt-4 flex items-center justify-center"
           variant="default"
-          onClick={() => {router.push('/admin/change-password/');}}
+          onClick={() => {router.push("/admin/change-password/");}}
         >
           <Lock className="mr-2 w-4 h-4" />
           Change Password

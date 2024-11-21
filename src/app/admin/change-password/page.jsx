@@ -50,12 +50,12 @@ export default function ChangePassword() {
 
     // Proceed with password change logic (e.g., API call)
     try {
-      const response = await fetch('http://localhost/lms-admin/change-password.php', {
-        method: 'POST',
+      const response = await fetch("http://localhost/lms-admin/change-password.php", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        credentials: 'include',
+        credentials: "include",
         body: JSON.stringify({
           oldPass: formData.current_password,
           newPassword: formData.new_password,
@@ -66,7 +66,7 @@ export default function ChangePassword() {
       if (data.error) {
         alert(`Error changing password: ${data.error}`);
       } else {
-        alert('Password updated successfully');
+        alert("Password updated successfully");
         setFormData({
           current_password: "",
           new_password: "",
@@ -74,8 +74,8 @@ export default function ChangePassword() {
         });
       }
     } catch (error) {
-      console.error('Error changing password:', error);
-      alert('Failed to change password. Please try again later.');
+      console.error("Error changing password:", error);
+      alert("Failed to change password. Please try again later.");
     }
   };
   

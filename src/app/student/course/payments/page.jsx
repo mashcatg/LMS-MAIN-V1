@@ -27,9 +27,9 @@ export default function Page() {
         const data = await response.json();
         console.log(data); // Check the data structure in the console
         
-        // Check if the response contains the 'payments' array
+        // Check if the response contains the "payments" array
         if (data.payments && Array.isArray(data.payments)) {
-          setPayments(data.payments);  // Set the payments from the 'payments' key
+          setPayments(data.payments);  // Set the payments from the "payments" key
         } else {
           throw new Error("Invalid data format");
         }

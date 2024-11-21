@@ -21,19 +21,19 @@ export default function ExpenseChart() {
   useEffect(() => {
     const fetchExpenses = async () => {
       try {
-        const response = await fetch('http://localhost/lms-admin/dash/fetch_expense_dash.php', {
-          method: 'GET',
-          credentials: 'include',
+        const response = await fetch("http://localhost/lms-admin/dash/fetch_expense_dash.php", {
+          method: "GET",
+          credentials: "include",
         });
         const data = await response.json();
-        console.log('Fetched expenses:', data); // Log the fetched data
+        console.log("Fetched expenses:", data); // Log the fetched data
         if (data.error) {
-          console.error('Failed to fetch expenses:', data.error);
+          console.error("Failed to fetch expenses:", data.error);
         } else {
           setExpenses(data.expenses); // Assuming the same structure as income
         }
       } catch (error) {
-        console.error('An error occurred during expenses fetch:', error);
+        console.error("An error occurred during expenses fetch:", error);
       }
     };
 

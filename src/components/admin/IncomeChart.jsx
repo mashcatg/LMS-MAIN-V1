@@ -24,19 +24,19 @@ export default function IncomeChart() {
   useEffect(() => {
     const fetchPayments = async () => {
       try {
-        const response = await fetch('http://localhost/lms-admin/dash/fetch_income_dash.php', {
-          method: 'GET',
-          credentials: 'include',
+        const response = await fetch("http://localhost/lms-admin/dash/fetch_income_dash.php", {
+          method: "GET",
+          credentials: "include",
         });
         const data = await response.json();
-        console.log('Fetched payments:', data); // Log the fetched data
+        console.log("Fetched payments:", data); // Log the fetched data
         if (data.error) {
-          console.error('Failed to fetch payments:', data.error);
+          console.error("Failed to fetch payments:", data.error);
         } else {
           setPayments(data.payments);
         }
       } catch (error) {
-        console.error('An error occurred during payments fetch:', error);
+        console.error("An error occurred during payments fetch:", error);
       }
     };
   

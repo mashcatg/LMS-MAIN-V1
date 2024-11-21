@@ -190,12 +190,12 @@ export default function EditProfile() {
                   {/* Father Name Input (Editable) */}
                   <div className="relative mb-4">
                     <label className="absolute -top-2 left-2 bg-white px-1 text-xs text-gray-600">
-                      Father's Name
+                      Father"s Name
                     </label>
                     <input
                       type="text"
                       className="border text-md h-full rounded-md w-full px-3 py-2 focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent"
-                      placeholder="Enter father's name"
+                      placeholder="Enter father"s name"
                       name="father_name"
                       value={formData.father_name}
                       onChange={handleChange}
@@ -205,12 +205,12 @@ export default function EditProfile() {
                   {/* Father Number Input (Disabled) */}
                   <div className="relative mb-4">
                     <label className="absolute -top-2 left-2 bg-white px-1 text-xs text-gray-600">
-                      Father's Number
+                      Father"s Number
                     </label>
                     <input
                       type="text"
                       className="border text-md h-full rounded-md w-full px-3 py-2 focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent"
-                      placeholder="Enter father's number"
+                      placeholder="Enter father"s number"
                       name="father_number"
                       value={formData.father_number}
                       onChange={handleChange}
@@ -221,12 +221,12 @@ export default function EditProfile() {
                   {/* Mother Name Input (Editable) */}
                   <div className="relative mb-4">
                     <label className="absolute -top-2 left-2 bg-white px-1 text-xs text-gray-600">
-                      Mother's Name
+                      Mother"s Name
                     </label>
                     <input
                       type="text"
                       className="border text-md h-full rounded-md w-full px-3 py-2 focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent"
-                      placeholder="Enter mother's name"
+                      placeholder="Enter mother"s name"
                       name="mother_name"
                       value={formData.mother_name}
                       onChange={handleChange}
@@ -236,12 +236,12 @@ export default function EditProfile() {
                   {/* Mother Number Input (Disabled) */}
                   <div className="relative mb-4">
                     <label className="absolute -top-2 left-2 bg-white px-1 text-xs text-gray-600">
-                      Mother's Number
+                      Mother"s Number
                     </label>
                     <input
                       type="text"
                       className="border text-md h-full rounded-md w-full px-3 py-2 focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent"
-                      placeholder="Enter mother's number"
+                      placeholder="Enter mother"s number"
                       name="mother_number"
                       value={formData.mother_number}
                       onChange={handleChange}

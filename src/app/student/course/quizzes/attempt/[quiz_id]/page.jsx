@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { useRouter } from 'next/navigation'; // For route navigation
+import { useRouter } from "next/navigation"; // For route navigation
 
 export default function QuizAttempt({ params }) {
   const { quiz_id } = params;
@@ -46,7 +46,7 @@ export default function QuizAttempt({ params }) {
             question.option_3,
             question.correct_option_4,
           ]).map((option, index) => ({
-            label: String.fromCharCode(97 + index), // 'a' -> 97, 'b' -> 98, ...
+            label: String.fromCharCode(97 + index), // "a" -> 97, "b" -> 98, ...
             value: option,
           }));
 
@@ -111,7 +111,7 @@ export default function QuizAttempt({ params }) {
   const handleOptionSelect = (questionId, selectedLabel) => {
     setSelectedAnswers((prevAnswers) => ({
       ...prevAnswers,
-      [questionId]: selectedLabel, // Store the answer label (e.g., 'a.', 'b.', etc.)
+      [questionId]: selectedLabel, // Store the answer label (e.g., "a.", "b.", etc.)
     }));
   };
 
@@ -126,7 +126,7 @@ export default function QuizAttempt({ params }) {
         return {
           question_id: question.question_id,
           options: question.options.map((option) => `${option.label}. ${option.value}`), // Include full options
-          submitted_answer: selectedAnswer, // Store selected label (e.g., 'a.', 'b.', etc.)
+          submitted_answer: selectedAnswer, // Store selected label (e.g., "a.", "b.", etc.)
         };
       });
 
@@ -160,12 +160,12 @@ export default function QuizAttempt({ params }) {
       if (!isSubmitted) {
         handleSubmit();
         event.preventDefault(); // Prevent the "Are you sure?" dialog
-        event.returnValue = ''; // Most browsers require setting returnValue
+        event.returnValue = ""; // Most browsers require setting returnValue
       }
     };
 
     const handleVisibilityChange = () => {
-      if (document.visibilityState === 'hidden' && !isSubmitted) {
+      if (document.visibilityState === "hidden" && !isSubmitted) {
         handleSubmit(); // Submit when switching tabs or leaving the page
       }
     };

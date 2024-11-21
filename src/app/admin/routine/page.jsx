@@ -43,19 +43,19 @@ export default function Routine() {
 
   const fetchRoutine = async () => {
     try {
-      const response = await fetch('http://localhost/lms-admin/routines/fetch_routines.php', {
-        method: 'GET',
-        credentials: 'include',
+      const response = await fetch("http://localhost/lms-admin/routines/fetch_routines.php", {
+        method: "GET",
+        credentials: "include",
       });
       const data = await response.json();
       if (data.success) {
         setRoutineData(data.routines || []);
       } else {
-        setError(data.message || 'Error fetching routine');
+        setError(data.message || "Error fetching routine");
       }
     } catch (error) {
-      console.error('Error fetching routine:', error);
-      setError('Error fetching routine');
+      console.error("Error fetching routine:", error);
+      setError("Error fetching routine");
     }
   };
 

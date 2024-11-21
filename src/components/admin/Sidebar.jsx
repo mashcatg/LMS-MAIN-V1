@@ -1,5 +1,5 @@
 "use client"; // Necessary to enable client-side features
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import {
   LayoutDashboard,
@@ -62,11 +62,11 @@ export default function Sidebar({ isCollapsed, setIsCollapsed }) {
     // Check authentication function
     const checkAuth = async (url) => {
       try {
-        const response = await fetch('http://localhost/lms-admin/check_auth.php', {
-          method: 'POST',
-          credentials: 'include',
+        const response = await fetch("http://localhost/lms-admin/check_auth.php", {
+          method: "POST",
+          credentials: "include",
           headers: {
-            'Content-Type': 'application/x-www-form-urlencoded', // Ensure correct content type
+            "Content-Type": "application/x-www-form-urlencoded", // Ensure correct content type
           },
           body: new URLSearchParams({
             from_page: url,
@@ -74,10 +74,10 @@ export default function Sidebar({ isCollapsed, setIsCollapsed }) {
         });
         const data = await response.json();
         if (!data.logged_in) {
-          router.push('/auth/admin/login/'); // Redirect to login if not authenticated
+          router.push("/auth/admin/login/"); // Redirect to login if not authenticated
         }
       } catch (error) {
-        console.error('Error checking authentication:', error);
+        console.error("Error checking authentication:", error);
       }
     };
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 
 const Invoice = ({ enrollment }) => {
     const printWindowRef = useRef([]);
@@ -13,10 +13,10 @@ const Invoice = ({ enrollment }) => {
         printWindowRef.current = []; // Reset the array
 
         // Open a new window
-        const newWindow = window.open('', '_blank');
+        const newWindow = window.open("", "_blank");
 
         if (!newWindow) {
-            console.error('Failed to open new window. Please check your browser settings.');
+            console.error("Failed to open new window. Please check your browser settings.");
             return;
         }
 
@@ -32,7 +32,7 @@ const Invoice = ({ enrollment }) => {
                     <title>Invoice - ${enrollment.enrollment_id}</title>
                     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
                     <style>
-                        body { margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #f8f9fa; font-family: 'Poppins', sans-serif; font-size: 10px; color: #333; }
+                        body { margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #f8f9fa; font-family: "Poppins", sans-serif; font-size: 10px; color: #333; }
                         .container { width: 100%; max-width: 700px; background-color: white; box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); padding: 30px; margin: 40px; border-radius: 8px; position: relative; border-top: 10px solid #13d49a; }
                         .invoice-title { text-align: center; font-size: 20px; font-weight: 600; margin: 20px 0; color: #13d49a; }
                         .row { display: flex; justify-content: space-between; margin-bottom: 20px; }
@@ -41,7 +41,7 @@ const Invoice = ({ enrollment }) => {
                         .table th, .table td, .table2 td { padding: 10px; border: 1px solid #ddd; text-align: left; }
                         .table th { background-color: #13d49a; color: white; }
                         .table2 .highlight { background-color: #13d49a; color: white; font-weight: bold; }
-                        a { text-decoration: none; color: #13d49a; font-family: 'Poppins', sans-serif; font-size: 10px; }
+                        a { text-decoration: none; color: #13d49a; font-family: "Poppins", sans-serif; font-size: 10px; }
                     </style>
                 </head>
                 <body>
@@ -52,7 +52,7 @@ const Invoice = ({ enrollment }) => {
                                 <h3>Invoiced to:</h3>
                                 <h5>${enrollment.student.student_name} <br> ${enrollment.student.student_number}</h5>
                             </div>
-                            <div class="column" style='text-align:right;'>
+                            <div class="column" style="text-align:right;">
                                 <h3>Paid to:</h3>
                                 <h5>${enrollment.service_details.company_name}</h5>
                                 <img src="${enrollment.service_details.logo}" alt="Logo" style="width: 100px;" />
@@ -70,7 +70,7 @@ const Invoice = ({ enrollment }) => {
                             <tbody>
                                 <tr>
                                     <td>${enrollment.enrollment_id}</td>
-                                    <td>${enrollment.course_fee || 'TBD'} BDT</td>
+                                    <td>${enrollment.course_fee || "TBD"} BDT</td>
                                 </tr>
                             </tbody>
                         </table>

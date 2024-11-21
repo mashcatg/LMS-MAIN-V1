@@ -8,7 +8,7 @@ export default function Page() {
       <div className="text-center text-white space-y-6 p-8 bg-opacity-80 bg-primary rounded-lg shadow-lg">
         <h1 className="text-5xl font-extrabold tracking-tight">Coming Soon!</h1>
         <p className="text-lg font-medium">
-          We're crafting something amazing. Stay tuned for updates!
+          We&lsquo;re crafting something amazing. Stay tuned for updates!
         </p>
       </div>
     </main>

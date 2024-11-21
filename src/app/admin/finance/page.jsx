@@ -30,8 +30,8 @@ import {
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
-} from '@radix-ui/react-dropdown-menu';
-import { Menu, MenuItem, MenuTrigger, MenuContent } from '@radix-ui/react-menu';
+} from "@radix-ui/react-dropdown-menu";
+import { Menu, MenuItem, MenuTrigger, MenuContent } from "@radix-ui/react-menu";
 import {
   Table,
   TableBody,
@@ -76,12 +76,12 @@ function Payments() {
         setPayments(data.payments || []); // Adjusted to match the new response structure
         setTotalPages(Math.ceil(data.payments.length / itemsPerPage)); // Calculate totalPages based on fetched data
       } else {
-        console.error('Error fetching payments:', data.message);
-        setError('Error fetching payments');
+        console.error("Error fetching payments:", data.message);
+        setError("Error fetching payments");
       }
     } catch (error) {
-      console.error('Error fetching payments:', error);
-      setError('Error fetching payments');
+      console.error("Error fetching payments:", error);
+      setError("Error fetching payments");
     }
   };
   useEffect(() => {
@@ -90,19 +90,19 @@ function Payments() {
   const handlePaymentDelete = async (paymentId) => {
     try {
       const response = await fetch(`http://localhost/lms-admin/finance/delete_payment.php?payment_id=${paymentId}`, {
-        method: 'DELETE',
-        credentials: 'include',
+        method: "DELETE",
+        credentials: "include",
       });
       const data = await response.json();
       if (data.success) {
         setPayments((prevPayments) => prevPayments.filter((p) => p.payment_id !== paymentId));
       } else {
-        console.error('Error deleting payment:', data.message);
-        setError('Error deleting payment');
+        console.error("Error deleting payment:", data.message);
+        setError("Error deleting payment");
       }
     } catch (error) {
-      console.error('Error deleting payment:', error);
-      setError('Error deleting payment');
+      console.error("Error deleting payment:", error);
+      setError("Error deleting payment");
     }
   };
   const handleEditPayment = (payment) => {
@@ -357,18 +357,18 @@ function Expense() {
 
   const fetchExpenseSectors = async () => {
     try {
-      const response = await fetch('http://localhost/lms-admin/finance/fetch_expense_sectors.php', {
-        method: 'GET',
-        credentials: 'include',
+      const response = await fetch("http://localhost/lms-admin/finance/fetch_expense_sectors.php", {
+        method: "GET",
+        credentials: "include",
       });
       const data = await response.json();
       if (data.success) {
         setSectors(data.sectors); // Set the fetched sectors
       } else {
-        console.error('Error fetching expense sectors:', data.message);
+        console.error("Error fetching expense sectors:", data.message);
       }
     } catch (error) {
-      console.error('Error fetching expense sectors:', error);
+      console.error("Error fetching expense sectors:", error);
     }
   };
   useEffect(() => {
@@ -377,18 +377,18 @@ function Expense() {
 
   const fetchExpense = async () => {
     try {
-      const response = await fetch('http://localhost/lms-admin/finance/fetch_expenses.php', {
-        method: 'GET',
-        credentials: 'include',
+      const response = await fetch("http://localhost/lms-admin/finance/fetch_expenses.php", {
+        method: "GET",
+        credentials: "include",
       });
       const data = await response.json();
       if (data.success) {
         setExpense(data.expenses); 
       } else {
-        console.error('Error fetching expense:', data.message);
+        console.error("Error fetching expense:", data.message);
       }
     } catch (error) {
-      console.error('Error fetching expense:', error);
+      console.error("Error fetching expense:", error);
     }
   };
   useEffect(() => {
@@ -397,12 +397,12 @@ function Expense() {
   const handleAddSector = async () => {
     if (newSector.trim() !== "") {
       try {
-        const response = await fetch('http://localhost/lms-admin/finance/create_expense_sector.php', {
-          method: 'POST',
+        const response = await fetch("http://localhost/lms-admin/finance/create_expense_sector.php", {
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
-          credentials: 'include',
+          credentials: "include",
           body: JSON.stringify({
             sector_name: newSector,
           }),
@@ -420,10 +420,10 @@ function Expense() {
           fetchExpenseSectors();
           // setNewExpense(""); 
         } else {
-          console.error('Error adding sector:', data.message);
+          console.error("Error adding sector:", data.message);
         }
       } catch (error) {
-        console.error('Error adding sector:', error);
+        console.error("Error adding sector:", error);
       }
     }
   };
@@ -431,11 +431,11 @@ function Expense() {
   const handleDeleteSector = async (sectorId) => {
     try {
       const response = await fetch(`http://localhost/lms-admin/finance/delete_expense_sector.php`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        credentials: 'include',
+        credentials: "include",
         body: JSON.stringify({ sector_id: sectorId }),
       });
   
@@ -444,21 +444,21 @@ function Expense() {
       if (data.success) {
         setSectors(sectors.filter((sector) => sector.sector_id !== sectorId));
       } else {
-        console.error('Error deleting sector:', data.message);
+        console.error("Error deleting sector:", data.message);
       }
     } catch (error) {
-      console.error('Error deleting sector:', error);
+      console.error("Error deleting sector:", error);
     }
   };
   
   const handleDelete = async (expenseId) => {
     try {
       const response = await fetch(`http://localhost/lms-admin/finance/delete_expense.php`, {
-        method: 'DELETE',
+        method: "DELETE",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        credentials: 'include',
+        credentials: "include",
         body: JSON.stringify({ expense_id: expenseId }),
       });
   
@@ -467,10 +467,10 @@ function Expense() {
       if (data.success) {
         fetchExpense(); // Refresh the expense list
       } else {
-        console.error('Error deleting expense:', data.message);
+        console.error("Error deleting expense:", data.message);
       }
     } catch (error) {
-      console.error('Error deleting expense:', error);
+      console.error("Error deleting expense:", error);
     }
   };
 
@@ -497,7 +497,7 @@ function Expense() {
   // Toggle the sidebar based on edit or add mode
 const toggleSidebar = () => {
   // Reset to "Add" mode
-  setIsEditing(false); // Ensure it's not in edit mode
+  setIsEditing(false); // Ensure it"s not in edit mode
   setExistingExpense(null); // Clear any existing expense being edited
   setIsSidebarOpen(!isSidebarOpen); // Open or close the sidebar
 };

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -17,7 +17,7 @@ export default function OTPVerification() {
 
   // Fetch phone number from query parameter
   useEffect(() => {
-    const phoneFromUrl = searchParams.get('phone');
+    const phoneFromUrl = searchParams.get("phone");
     if (phoneFromUrl) {
       setPhone(phoneFromUrl); // Set phone from the URL
     }
@@ -30,30 +30,30 @@ export default function OTPVerification() {
     setSuccess(false); // Reset success message
 
     // Send OTP verification request to the server
-    fetch('https://youthsthought.com/lms-backend/student-panel/student-auth/verify_otp.php', {
-      method: 'POST',
+    fetch("https://youthsthought.com/lms-backend/student-panel/student-auth/verify_otp.php", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json', // Ensure content type is application/json
+        "Content-Type": "application/json", // Ensure content type is application/json
       },
       body: JSON.stringify({
         phone: phone, // Send the phone number from the query parameter
         otp: otp, // OTP entered by the user
       }),
-      credentials: 'include', // Ensure cookies are sent with the request (if needed)
+      credentials: "include", // Ensure cookies are sent with the request (if needed)
     })
       .then(response => response.json())
       .then(data => {
         if (data.success) {
           // If OTP verification is successful, redirect to password reset page
           setSuccess(true);
-          router.push('/student/');  // Redirect to reset password page
+          router.push("/student/");  // Redirect to reset password page
         } else {
           // If error occurs, display the error message
           setError(data.message || "Invalid OTP. Please try again.");
         }
       })
       .catch(error => {
-        console.error('Error:', error);
+        console.error("Error:", error);
         setError("An error occurred. Please try again.");
       })
       .finally(() => {
@@ -61,7 +61,7 @@ export default function OTPVerification() {
       });
   };
 
-  // If phone number is not available, show loading state until it's fetched
+  // If phone number is not available, show loading state until it"s fetched
   if (!phone) {
     return <p>Loading...</p>; // Optional: Show loading state until phone number is available
   }
@@ -111,7 +111,7 @@ export default function OTPVerification() {
           </form>
 
           <div className="mt-4 text-center text-sm">
-            Didn't receive the OTP?{" "}
+            Didn"t receive the OTP?{" "}
             <button
               onClick={() => router.push(`forgot-password`)} // Redirect to Forgot Password page to resend OTP
               className="underline text-primary"

@@ -32,7 +32,7 @@ const AddCard = ({ card, onCardAdded, onCardEdited, onClose }) => {
 
       setCourseId(card.course_id);
 
-      setAvailability(card.availability === 'yes');
+      setAvailability(card.availability === "yes");
 
     }
 
@@ -148,7 +148,7 @@ const AddCard = ({ card, onCardAdded, onCardEdited, onClose }) => {
 
           course_id: courseId,
 
-          availability: availability ? '1' : '0',
+          availability: availability ? "1" : "0",
 
         }),
 
@@ -184,7 +184,7 @@ const AddCard = ({ card, onCardAdded, onCardEdited, onClose }) => {
 
             course_id: courseId,
 
-            availability: availability ? 'yes' : 'no'
+            availability: availability ? "yes" : "no"
 
           });
 

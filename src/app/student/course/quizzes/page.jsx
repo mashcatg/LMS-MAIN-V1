@@ -101,7 +101,7 @@ export default function Page() {
 
                 <div className="flex justify-between">
                   {/* Multiple Availability */}
-                  <p className={`font-semibold text-md ${quiz.multiple_availability ? 'text-green-500' : 'text-red-500'}`}>
+                  <p className={`font-semibold text-md ${quiz.multiple_availability ? "text-green-500" : "text-red-500"}`}>
                     {quiz.multiple_availability ? "Multiple Availability: Enabled" : "Multiple Availability: Disabled"}
                   </p>
                 </div>

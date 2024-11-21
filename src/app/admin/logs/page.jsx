@@ -324,7 +324,7 @@ function StudentTraffic() {
             credentials: "include",
           });
           if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error("Network response was not ok");
           }
           const data = await response.json();
           if (data.error) {
@@ -355,7 +355,7 @@ function StudentTraffic() {
           });
 
           if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error("Network response was not ok");
           }
 
           const data = await response.json();

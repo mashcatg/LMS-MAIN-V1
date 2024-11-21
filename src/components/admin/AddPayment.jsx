@@ -32,11 +32,11 @@ const AddPayment = ({ onPaymentAdd, payment, isEditing, setIsEditing, isSidebarO
   
     try {
       const response = await fetch(endpoint, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        credentials: 'include',
+        credentials: "include",
         body: JSON.stringify(formData),
       });
       const data = await response.json();
@@ -47,10 +47,10 @@ const AddPayment = ({ onPaymentAdd, payment, isEditing, setIsEditing, isSidebarO
         setIsEditing(false); // Reset editing state
         setFormData({}); // Blank out the form data after submission
       } else {
-        console.error(`Error ${isEditing ? 'updating' : 'creating'} payment:`, data.message);
+        console.error(`Error ${isEditing ? "updating" : "creating"} payment:`, data.message);
       }
     } catch (error) {
-      console.error(`Error ${isEditing ? 'updating' : 'creating'} payment:`, error);
+      console.error(`Error ${isEditing ? "updating" : "creating"} payment:`, error);
     }
   };
   
@@ -104,7 +104,7 @@ const AddPayment = ({ onPaymentAdd, payment, isEditing, setIsEditing, isSidebarO
                 type="text"
                 class="border text-md h-full rounded-md w-full px-3 py-2 focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent"
                 placeholder="Enter Student Index"
-                value={formData.student_index || ''}
+                value={formData.student_index || ""}
                 onChange={(e) => setFormData({ ...formData, student_index: e.target.value })}
               />
             </div>
@@ -117,7 +117,7 @@ const AddPayment = ({ onPaymentAdd, payment, isEditing, setIsEditing, isSidebarO
               type="text"
               class="border text-md h-full rounded-md w-full px-3 py-2 focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent"
               placeholder="Enter Paid Amount"
-              value={formData.paid_amount || ''}
+              value={formData.paid_amount || ""}
               onChange={(e) => setFormData({ ...formData, paid_amount: e.target.value })}
             />
           </div>
@@ -129,7 +129,7 @@ const AddPayment = ({ onPaymentAdd, payment, isEditing, setIsEditing, isSidebarO
               type="text"
               class="border text-md h-full rounded-md w-full px-3 py-2 focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent"
               placeholder="Enter Discounted Amount"
-              value={formData.discounted_amount || ''}
+              value={formData.discounted_amount || ""}
               onChange={(e) => setFormData({ ...formData, discounted_amount: e.target.value })}
             />
           </div>

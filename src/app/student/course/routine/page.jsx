@@ -26,9 +26,9 @@ export default function Page() {
         const data = await response.json();
         console.log(data); // Check the data structure in the console
         
-        // Check if the response contains the 'routines' array
+        // Check if the response contains the "routines" array
         if (data.routines && Array.isArray(data.routines)) {
-          setRoutines(data.routines);  // Set the routines from the 'routines' key
+          setRoutines(data.routines);  // Set the routines from the "routines" key
         } else {
           throw new Error("Invalid data format");
         }

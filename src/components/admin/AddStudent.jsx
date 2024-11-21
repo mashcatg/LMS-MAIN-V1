@@ -47,47 +47,47 @@ const AddStudent = ({ onStudentAdded, student, setEditingStudent }) => {
 
     const formDataToSend = new FormData();
     if(student){
-    formDataToSend.append('student_id', student.student_id);
+    formDataToSend.append("student_id", student.student_id);
     }
-    formDataToSend.append('student_name', formData.name);
-    formDataToSend.append('student_number', formData.phoneNumber);
-    formDataToSend.append('student_institution', formData.institution);
-    formDataToSend.append('student_date_of_birth', formData.dateOfBirth);
-    formDataToSend.append('father_name', formData.fathersName);
-    formDataToSend.append('father_number', formData.fathersPhoneNumber);
-    formDataToSend.append('mother_name', formData.mothersName);
-    formDataToSend.append('mother_number', formData.mothersPhoneNumber);
-    formDataToSend.append('student_address', formData.homeAddress);
-    formDataToSend.append('student_image', formData.image); 
+    formDataToSend.append("student_name", formData.name);
+    formDataToSend.append("student_number", formData.phoneNumber);
+    formDataToSend.append("student_institution", formData.institution);
+    formDataToSend.append("student_date_of_birth", formData.dateOfBirth);
+    formDataToSend.append("father_name", formData.fathersName);
+    formDataToSend.append("father_number", formData.fathersPhoneNumber);
+    formDataToSend.append("mother_name", formData.mothersName);
+    formDataToSend.append("mother_number", formData.mothersPhoneNumber);
+    formDataToSend.append("student_address", formData.homeAddress);
+    formDataToSend.append("student_image", formData.image); 
 
     try {
         let response;
         if (student) {
             // Update student if editing
             response = await fetch(`http://localhost/lms-admin/students/edit_student.php?student_id=${student.student_id}`, {
-                method: 'POST',
+                method: "POST",
                 body: formDataToSend,
-                credentials: 'include',
+                credentials: "include",
             });
         } else {
             // Add a new student if not editing
-            response = await fetch('http://localhost/lms-admin/students/create_student.php', {
-                method: 'POST',
+            response = await fetch("http://localhost/lms-admin/students/create_student.php", {
+                method: "POST",
                 body: formDataToSend,
-                credentials: 'include',
+                credentials: "include",
             });
         }
 
         const result = await response.json();
         if (result.success) {
-            alert(student ? 'Student updated successfully!' : 'Student added successfully!');
+            alert(student ? "Student updated successfully!" : "Student added successfully!");
             onStudentAdded(); // Callback to refresh the student list
             closeSidebar();   // Close the sidebar after submission
         } else {
-            alert('Error: ' + result.message);
+            alert("Error: " + result.message);
         }
     } catch (error) {
-        console.error('Error submitting form', error);
+        console.error("Error submitting form", error);
     }
 };
 
@@ -225,10 +225,10 @@ const closeSidebar = () => {
             />
           </div>
 
-          {/* Father's Name */}
+          {/* Father"s Name */}
           <div className="relative w-full my-6">
             <label className="absolute -top-2 left-2 bg-white px-1 text-xs text-gray-600">
-              Father's Name
+              Father"s Name
             </label>
             <input
               type="text"
@@ -236,13 +236,13 @@ const closeSidebar = () => {
               value={formData.fathersName}
               onChange={handleInputChange}
               className="border text-md h-full rounded-md w-full px-3 py-2 focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent"
-              placeholder="Enter Father's Name"
+              placeholder="Enter Father"s Name"
             />
           </div>
 
           <div className="relative w-full my-6">
             <label className="absolute -top-2 left-2 bg-white px-1 text-xs text-gray-600">
-              Father's Phone Number
+              Father"s Phone Number
             </label>
             <input
               type="text"
@@ -250,14 +250,14 @@ const closeSidebar = () => {
               value={formData.fathersPhoneNumber}
               onChange={handleInputChange}
               className="border text-md h-full rounded-md w-full px-3 py-2 focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent"
-              placeholder="Enter Father's Phone Number"
+              placeholder="Enter Father"s Phone Number"
             />
           </div>
 
-          {/* Mother's Name */}
+          {/* Mother"s Name */}
           <div className="relative w-full my-6">
             <label className="absolute -top-2 left-2 bg-white px-1 text-xs text-gray-600">
-              Mother's Name
+              Mother"s Name
             </label>
             <input
               type="text"
@@ -265,13 +265,13 @@ const closeSidebar = () => {
               value={formData.mothersName}
               onChange={handleInputChange}
               className="border text-md h-full rounded-md w-full px-3 py-2 focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent"
-              placeholder="Enter Mother's Name"
+              placeholder="Enter Mother"s Name"
             />
           </div>
 
           <div className="relative w-full my-6">
             <label className="absolute -top-2 left-2 bg-white px-1 text-xs text-gray-600">
-              Mother's Phone Number
+              Mother"s Phone Number
             </label>
             <input
               type="text"
@@ -279,7 +279,7 @@ const closeSidebar = () => {
               value={formData.mothersPhoneNumber}
               onChange={handleInputChange}
               className="border text-md h-full rounded-md w-full px-3 py-2 focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent"
-              placeholder="Enter Mother's Phone Number"
+              placeholder="Enter Mother"s Phone Number"
             />
           </div>
 

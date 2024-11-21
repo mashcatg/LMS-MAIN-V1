@@ -55,7 +55,7 @@ export const description =
 
 function Exams() {
   const [exams, setExams] = useState([]);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
   const [editingExam, setEditingExam] = useState(null);
@@ -97,9 +97,9 @@ function Exams() {
   
     const fetchExams = async () => {
       try {
-        const response = await fetch('http://localhost/lms-admin/exams/fetch_exams.php', {
-          method: 'GET',
-          credentials: 'include',
+        const response = await fetch("http://localhost/lms-admin/exams/fetch_exams.php", {
+          method: "GET",
+          credentials: "include",
         });
         const data = await response.json();
         if (data.error) {
@@ -108,8 +108,8 @@ function Exams() {
           setExams(data.exams || []);
         }
       } catch (error) {
-        console.error('Error fetching exams:', error);
-        setError('Error fetching exams');
+        console.error("Error fetching exams:", error);
+        setError("Error fetching exams");
       }
     };
   useEffect(() => {

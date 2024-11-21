@@ -248,10 +248,10 @@ export default function Quiz() {
                     {quiz.quiz_duration}
                   </TableCell>
                   <TableCell className="p-4 font-medium text-gray-800">
-                    {quiz.student_visibility === '1' ? "Yes" : "No"}
+                    {quiz.student_visibility === "1" ? "Yes" : "No"}
                   </TableCell>
                   <TableCell className="p-4 font-medium text-gray-800">
-                    {quiz.multiple_availability === '1' ? "On" : "Off"}
+                    {quiz.multiple_availability === "1" ? "On" : "Off"}
                   </TableCell>
                   <TableCell className="p-4 text-right">
                     <DropdownMenu>

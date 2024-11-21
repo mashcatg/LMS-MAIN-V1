@@ -28,9 +28,9 @@ export default function Home() {
  // Fetch notes function, moved outside useEffect
 const fetchDashWidget = async () => {
   try {
-    const response = await fetch('https://youthsthought.com/lms-backend/student-panel/dashWidgets/dash_widgets.php', {
-      method: 'GET',
-      credentials: 'include',
+    const response = await fetch("https://youthsthought.com/lms-backend/student-panel/dashWidgets/dash_widgets.php", {
+      method: "GET",
+      credentials: "include",
     });
     const data = await response.json();
     console.log(data);
@@ -40,8 +40,8 @@ const fetchDashWidget = async () => {
       setDashWidget(data.totals || []);
     }
   } catch (error) {
-    console.error('Error fetching totals:', error);
-    setError('Error fetching totals');
+    console.error("Error fetching totals:", error);
+    setError("Error fetching totals");
   }
 };
   // Fetch courses on component mount

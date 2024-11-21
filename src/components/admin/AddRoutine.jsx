@@ -37,7 +37,7 @@ const AddRoutine = ({ onBatchAdded, editingRoutine, setEditingRoutine }) => {
   useEffect(() => {
     const fetchBatches = async () => {
       if (selectedCourseIds.length) {
-        const courseIds = selectedCourseIds.join(',');
+        const courseIds = selectedCourseIds.join(",");
         const response = await fetch(`http://localhost/lms-admin/batches/fetch_course_batch.php?course_ids=${courseIds}`, {
           credentials: "include",
         });

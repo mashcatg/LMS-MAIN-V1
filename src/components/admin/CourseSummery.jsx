@@ -7,19 +7,19 @@ export default function CourseCarousel() {
   
   const fetchCourses = async () => {
       try {
-        const response = await fetch('http://localhost/lms-admin/dash/fetch_dash_courses.php', {
-          method: 'GET',
-          credentials: 'include',
+        const response = await fetch("http://localhost/lms-admin/dash/fetch_dash_courses.php", {
+          method: "GET",
+          credentials: "include",
         });
         const data = await response.json();
-        console.log('Fetched courses:', data); // Log the fetched data
+        console.log("Fetched courses:", data); // Log the fetched data
         if (data.error) {
-          console.error('Failed to fetch courses:', data.error);
+          console.error("Failed to fetch courses:", data.error);
         } else {
           setCourses(data.courses.map(course => ({ course: course.course, ...course })));
         }
       } catch (error) {
-        console.error('An error occurred during course fetch:', error);
+        console.error("An error occurred during course fetch:", error);
       }
     };
   useEffect(() => {  
@@ -45,7 +45,7 @@ export default function CourseCarousel() {
   return (
     <div className="relative w-full md:w-1/3 mx-auto p-4 rounded-lg bg-gradient-to-r from-primary to-secondary">
       {/* Course Slide */}
-      <div className="z-5 absolute inset-0 bg-opacity-90 bg-[url('https://www.transparenttextures.com/patterns/gplay.png')]"></div>
+      <div className="z-5 absolute inset-0 bg-opacity-90 bg-[url("https://www.transparenttextures.com/patterns/gplay.png")]"></div>
       <div className="absolute inset-0 bg-black opacity-10 z-[2] rounded-lg"></div>
 
       <div className="relative overflow-hidden h-64 z-10">

@@ -33,7 +33,7 @@ export function SideNavbar({ links, isCollapsed }) {
         <nav className="overflow-y-auto overflow-x-hidden max-h-[80vh] grid gap-1 px-2 group-[[data-collapsed=true]]:justify-center group-[[data-collapsed=true]]:px-2">
           {links.map((link, index) =>
             isCollapsed ? (
-              <Tooltip key={index} delayDuration={0}>
+              <Tooltip key={link.url} delayDuration={0}>
                 <TooltipTrigger asChild>
                   <Link
                     href={link.url}

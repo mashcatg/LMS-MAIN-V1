@@ -52,7 +52,7 @@ export const description =
 
 export default function Notices() {
   const [notices, setNotices] = useState([]);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
   const itemsPerPage = 10;
@@ -84,9 +84,9 @@ export default function Notices() {
   // Fetch notices from the server
   const fetchNotices = async () => {
     try {
-      const response = await fetch('http://localhost/lms-admin/notices/fetch_notices.php', {
-        method: 'GET',
-        credentials: 'include',
+      const response = await fetch("http://localhost/lms-admin/notices/fetch_notices.php", {
+        method: "GET",
+        credentials: "include",
       });
       const data = await response.json();
       if (data.error) {
@@ -95,8 +95,8 @@ export default function Notices() {
         setNotices(data.notices || []);
       }
     } catch (error) {
-      console.error('Error fetching notices:', error);
-      setError('Error fetching notices');
+      console.error("Error fetching notices:", error);
+      setError("Error fetching notices");
     }
   };
 

@@ -70,7 +70,7 @@ const DashboardChatBox = () => {
           minute: "2-digit",
         }),
         text: message,
-        profilePic: "https://randomuser.me/api/portraits/men/2.jpg", // Replace with the user's profile picture
+        profilePic: "https://randomuser.me/api/portraits/men/2.jpg", // Replace with the user"s profile picture
       };
       setMessages([...messages, newMessage]);
       setMessage("");

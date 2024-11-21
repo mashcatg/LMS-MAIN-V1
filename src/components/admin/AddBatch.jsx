@@ -181,9 +181,9 @@ const AddBatch = ({ onBatchAdded, onBatchEdited, editingBatch, onClose }) => {
       >
         {/* Sidebar Content */}
         <div className="p-4">
-          <h2 className="text-lg font-semibold mb-2">{editingBatch ? 'Edit Batch' : 'Add New Batch'}</h2>
+          <h2 className="text-lg font-semibold mb-2">{editingBatch ? "Edit Batch" : "Add New Batch"}</h2>
           <p className="mb-10 text-muted-foreground">
-            {editingBatch ? 'Edit the batch details' : 'Add new batch with all informations.'}
+            {editingBatch ? "Edit the batch details" : "Add new batch with all informations."}
           </p>
           <div class="relative w-full  my-6">
             <label class="absolute -top-2 left-2 bg-white px-1 text-xs text-gray-600">
@@ -241,7 +241,7 @@ const AddBatch = ({ onBatchAdded, onBatchEdited, editingBatch, onClose }) => {
               Currently accepting Admission?
             </label>
           </div>
-          <Button className="mt-4 w-full" onClick={handleSubmit}>{editingBatch ? 'Save Changes' : 'Submit'}</Button>
+          <Button className="mt-4 w-full" onClick={handleSubmit}>{editingBatch ? "Save Changes" : "Submit"}</Button>
         </div>
       </nav>
     </div>

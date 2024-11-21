@@ -651,11 +651,11 @@ function Batches() {
                         {" "}
                         {/* Flex container */}
                         <img
-                          src={currentCourse?.course_banner || ''}
-                          alt={currentCourse?.course_name || ''}
+                          src={currentCourse?.course_banner || ""}
+                          alt={currentCourse?.course_name || ""}
                           className="h-10 rounded-md object-cover"
                         />
-                        <span>{currentCourse?.course_name || 'N/A'}</span>{" "}
+                        <span>{currentCourse?.course_name || "N/A"}</span>{" "}
                         {/* Course name */}
                       </div>
                     </TableCell>
@@ -663,7 +663,7 @@ function Batches() {
                       {batch.batch_name}
                     </TableCell>
                     <TableCell className="p-4 font-medium text-gray-800">
-                      {currentBranch?.branch_name || 'N/A'}
+                      {currentBranch?.branch_name || "N/A"}
                     </TableCell>
                     <TableCell>
                       <Badge variant="default">

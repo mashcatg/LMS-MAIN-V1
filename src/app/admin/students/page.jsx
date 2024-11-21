@@ -47,9 +47,9 @@ import AddStudent from "@/components/admin/AddStudent";
 import AddEnrollment from "@/components/admin/AddEnrollment";
 export const description =
   "An products dashboard with a sidebar navigation. The sidebar has icon navigation. The content area has a breadcrumb and search in the header. It displays a list of products in a table with actions.";
-// import Invoice from '@/components/admin/PrintInvoice';
-// import html2canvas from 'html2canvas';
-//   import { jsPDF } from 'jspdf';
+// import Invoice from "@/components/admin/PrintInvoice";
+// import html2canvas from "html2canvas";
+//   import { jsPDF } from "jspdf";
 function Students() {
     const [students, setStudents] = useState([]);
     const [error, setError] = useState("");
@@ -60,14 +60,14 @@ function Students() {
     const totalPages = Math.ceil(students.length / itemsPerPage);
     const fetchStudents = async () => {
       try {
-          const response = await fetch('http://localhost/lms-admin/students/fetch_students.php', {
-              method: 'GET',
-              credentials: 'include',
+          const response = await fetch("http://localhost/lms-admin/students/fetch_students.php", {
+              method: "GET",
+              credentials: "include",
           });
           
           // Check if the response is OK
           if (!response.ok) {
-              throw new Error('Network response was not ok');
+              throw new Error("Network response was not ok");
           }
           
           const data = await response.json();
@@ -75,10 +75,10 @@ function Students() {
           if (data.success) {
               setStudents(data.students || []);
           } else {
-              console.error('Error fetching students:', data.message);
+              console.error("Error fetching students:", data.message);
           }
       } catch (error) {
-          console.error('Error fetching students:', error);
+          console.error("Error fetching students:", error);
       }
   };
   
@@ -90,11 +90,11 @@ function Students() {
     if (window.confirm("Are you sure you want to delete this student?")) {
           try {
           const response = await fetch(`http://localhost/lms-admin/students/delete_student.php?student_id=${studentId}`, {
-            method: 'DELETE',
+            method: "DELETE",
             headers: {
-              'Content-Type': 'application/json',
+              "Content-Type": "application/json",
             },
-            credentials: 'include',
+            credentials: "include",
             body: JSON.stringify({ student_id: studentId }),
           });
       
@@ -103,10 +103,10 @@ function Students() {
           if (data.success) {
             fetchStudents(); // Refresh the expense list
           } else {
-            console.error('Error deleting expense:', data.message);
+            console.error("Error deleting expense:", data.message);
           }
         } catch (error) {
-          console.error('Error deleting expense:', error);
+          console.error("Error deleting expense:", error);
         }
     }
   };
@@ -585,8 +585,8 @@ function Enrollments() {
             <title>Customer Copy</title>
             <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
             <style>
-                body { margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #f8f9fa; font-family: 'Poppins', sans-serif; font-size: 10px; color: #333; }
-                h5, h3, h4, p, a { font-family: 'Poppins', sans-serif; color: #333; }
+                body { margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #f8f9fa; font-family: "Poppins", sans-serif; font-size: 10px; color: #333; }
+                h5, h3, h4, p, a { font-family: "Poppins", sans-serif; color: #333; }
                 h5 { font-weight: 400; margin: 7px 0px; font-size: 10px; }
                 h3 { font-size: 13px; font-weight: 600; }
                 h4 { font-size: 10px; font-weight: 500; }
@@ -618,8 +618,8 @@ function Enrollments() {
                 </div>
                 <div class="sub-container">
                     <div class="date-status">
-                        <div class="date"><h4>Date: ${new Date().toLocaleDateString('en-US', { day: '2-digit', month: '2-digit', year: 'numeric' })}</h4></div>
-                        <div class="status"><h4>Status: <span style='color:green'>Valid</span></h4></div>
+                        <div class="date"><h4>Date: ${new Date().toLocaleDateString("en-US", { day: "2-digit", month: "2-digit", year: "numeric" })}</h4></div>
+                        <div class="status"><h4>Status: <span style="color:green">Valid</span></h4></div>
                     </div>
                     <div class="divider"></div>
                     <div class="row">
@@ -627,7 +627,7 @@ function Enrollments() {
                             <h3>Invoiced to:</h3>
                             <h5>${enrollment.student.student_name} <br> ${enrollment.student.student_institution}<br> ${enrollment.student.student_number}<br> ${enrollment.student.student_address}</h5>
                         </div>
-                        <div class="column" style='text-align:right;'>
+                        <div class="column" style="text-align:right;">
                             <h3>Paid to:</h3>
                             <h5>Team Ennovat</h5>
                             <h5>Chawkbazar, Chattogram</h5>
@@ -682,7 +682,7 @@ function Enrollments() {
                 <td>${payment.payment_admin_name}</td>
             </tr>
         `);
-    }).join('') : 
+    }).join("") : 
     `
         <tr>
             <td colspan="5">No payment records found.</td>
@@ -745,7 +745,7 @@ function Enrollments() {
         </html>
     `;
 
-    const newWindow = window.open('', '_blank');
+    const newWindow = window.open("", "_blank");
     newWindow.document.write(invoiceContent);
     newWindow.document.close();
 

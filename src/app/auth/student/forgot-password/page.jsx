@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -23,15 +23,15 @@ export default function ForgotPassword() {
     setSuccess(false); // Reset success message
   
     // Send a request to the request password reset endpoint
-    fetch('https://youthsthought.com/lms-backend/student-panel/student-auth/request_password_reset.php', {
-      method: 'POST',
+    fetch("https://youthsthought.com/lms-backend/student-panel/student-auth/request_password_reset.php", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json', // Ensure content type is application/json
+        "Content-Type": "application/json", // Ensure content type is application/json
       },
       body: JSON.stringify({
         student_number: phone, // Send phone number for password reset
       }),
-      credentials: 'include',  // Ensure cookies are sent with the request (if needed)
+      credentials: "include",  // Ensure cookies are sent with the request (if needed)
     })
     .then(response => response.json())
     .then(data => {
@@ -45,7 +45,7 @@ export default function ForgotPassword() {
       }
     })
     .catch(error => {
-      console.error('Error:', error);
+      console.error("Error:", error);
       setError("An error occurred. Please try again.");
     })
     .finally(() => {

@@ -1,4 +1,4 @@
-'use client'
+"use client"
 import React, { useEffect, useState } from "react";
 import "./globals.scss";
 
@@ -49,11 +49,11 @@ export default function RootLayout({ children }) {
   useEffect(() => {
     if (colors) {
       // Set the colors as CSS variables dynamically
-      document.documentElement.style.setProperty('--background', colors.background_color);
-      document.documentElement.style.setProperty('--foreground', colors.text_color);
-      document.documentElement.style.setProperty('--primary', colors.primary_color);
-      document.documentElement.style.setProperty('--accent', colors.accent_color);
-      document.documentElement.style.setProperty('--text', colors.text_color);
+      document.documentElement.style.setProperty("--background", colors.background_color);
+      document.documentElement.style.setProperty("--foreground", colors.text_color);
+      document.documentElement.style.setProperty("--primary", colors.primary_color);
+      document.documentElement.style.setProperty("--accent", colors.accent_color);
+      document.documentElement.style.setProperty("--text", colors.text_color);
     }
   }, [colors]);
 

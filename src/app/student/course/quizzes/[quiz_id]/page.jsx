@@ -13,8 +13,8 @@ export default function QuizDetails({ params }) {
 
   // Helper function to format date
   const formatDate = (dateString) => {
-    const options = { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true };
-    return new Date(dateString).toLocaleDateString('en-GB', options);
+    const options = { year: "numeric", month: "short", day: "numeric", hour: "numeric", minute: "numeric", hour12: true };
+    return new Date(dateString).toLocaleDateString("en-GB", options);
   };
 
   // Fetch quiz data and last attempt data from the API

@@ -91,7 +91,7 @@ const handleSubmit = async (e) => {
     });
   
     if (!response.ok) {
-      alert('Failed to add/update live class.');
+      alert("Failed to add/update live class.");
       return;
     }
   

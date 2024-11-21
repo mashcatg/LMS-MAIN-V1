@@ -38,7 +38,7 @@ export const description =
 
   export default function Notes() {
     const [notes, setNotes] = useState([]);
-    const [error, setError] = useState('');
+    const [error, setError] = useState("");
     const [currentPage, setCurrentPage] = useState(1);
     const [searchTerm, setSearchTerm] = useState("");
     const [editingNote, setEditingNote] = useState(null);
@@ -73,9 +73,9 @@ export const description =
     // Fetch notes function, moved outside useEffect
     const fetchNotes = async () => {
       try {
-        const response = await fetch('http://localhost/lms-admin/notes/fetch_notes.php', {
-          method: 'GET',
-          credentials: 'include',
+        const response = await fetch("http://localhost/lms-admin/notes/fetch_notes.php", {
+          method: "GET",
+          credentials: "include",
         });
         const data = await response.json();
         console.log(data);
@@ -85,8 +85,8 @@ export const description =
           setNotes(data.notes || []);
         }
       } catch (error) {
-        console.error('Error fetching notes:', error);
-        setError('Error fetching notes');
+        console.error("Error fetching notes:", error);
+        setError("Error fetching notes");
       }
     };
   
@@ -205,7 +205,7 @@ export const description =
                       {note.batch_names}
                     </TableCell>
                     <TableCell className="p-4 font-medium text-gray-800">
-                      {note.note_tags.split(',').map((tag, index) => (
+                      {note.note_tags.split(",").map((tag, index) => (
                         <a
                           key={index}
                           href={`/notes/${tag.trim()}`}

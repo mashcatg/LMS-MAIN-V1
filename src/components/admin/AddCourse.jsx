@@ -81,7 +81,7 @@ const AddCourse = ({ editingCourse, onCourseAdded, onCourseEdited, onClose }) =>
       });
 
       const data = await response.json();
-      if (data.message == 'Course updated successfully') {
+      if (data.message == "Course updated successfully") {
         alert("Course edited successfully!");
         onCourseEdited();
         closeSidebar();

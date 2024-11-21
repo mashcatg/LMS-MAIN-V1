@@ -38,9 +38,9 @@ export default function Home() {
  // Fetch notes function, moved outside useEffect
 const fetchCourses = async () => {
   try {
-    const response = await fetch('https://youthsthought.com/lms-backend/student-panel/courses/fetch_all_courses.php', {
-      method: 'GET',
-      credentials: 'include',
+    const response = await fetch("https://youthsthought.com/lms-backend/student-panel/courses/fetch_all_courses.php", {
+      method: "GET",
+      credentials: "include",
     });
     const data = await response.json();
     console.log(data);
@@ -50,8 +50,8 @@ const fetchCourses = async () => {
       setCourses(data.courses || []);
     }
   } catch (error) {
-    console.error('Error fetching courses:', error);
-    setError('Error fetching courses');
+    console.error("Error fetching courses:", error);
+    setError("Error fetching courses");
   }
 };
   // Fetch courses on component mount
@@ -62,9 +62,9 @@ const fetchCourses = async () => {
   // Fetch notes function, moved outside useEffect
 const fetchEnrolledCourses = async () => {
   try {
-    const response = await fetch('https://youthsthought.com/lms-backend/student-panel/courses/fetch_enrolled_courses.php', {
-      method: 'GET',
-      credentials: 'include',
+    const response = await fetch("https://youthsthought.com/lms-backend/student-panel/courses/fetch_enrolled_courses.php", {
+      method: "GET",
+      credentials: "include",
     });
     const data = await response.json();
     console.log(data);
@@ -75,8 +75,8 @@ const fetchEnrolledCourses = async () => {
       setTotalDue(data.total_due_amount || 0);
     }
   } catch (error) {
-    console.error('Error fetching courses:', error);
-    setError('Error fetching courses');
+    console.error("Error fetching courses:", error);
+    setError("Error fetching courses");
   }
 };
   // Fetch courses on component mount

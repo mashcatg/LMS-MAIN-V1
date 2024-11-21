@@ -55,7 +55,7 @@ export default function Attendance() {
   const [studentIndex, setStudentIndex] = useState("");
   const [totalEnrollments, setTotalEnrollments] = useState(0);
   const [totalAttendances, setTotalAttendances] = useState(0);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCourse, setSelectedCourse] = useState("");
@@ -104,9 +104,9 @@ export default function Attendance() {
   
     const fetchAttendances = async () => {
       try {
-        const response = await fetch('http://localhost/lms-admin/attendances/fetch_attendances.php', {
-          method: 'GET',
-          credentials: 'include',
+        const response = await fetch("http://localhost/lms-admin/attendances/fetch_attendances.php", {
+          method: "GET",
+          credentials: "include",
         });
   
         if (!response.ok) {
@@ -123,8 +123,8 @@ export default function Attendance() {
           setTotalAttendances(data.total_attendances || 0);
         }
       } catch (error) {
-        console.error('Error fetching attendances:', error);
-        setError('Error fetching attendances');
+        console.error("Error fetching attendances:", error);
+        setError("Error fetching attendances");
       }
     };
   useEffect(() => {
@@ -161,14 +161,14 @@ export default function Attendance() {
   
     try {
       const formData = new URLSearchParams();
-      formData.append('attendance_date', date);
-      formData.append('student_index', studentIndex);
+      formData.append("attendance_date", date);
+      formData.append("student_index", studentIndex);
   
-      const response = await fetch('http://localhost/lms-admin/attendances/create_attendance.php', {
-        method: 'POST',
+      const response = await fetch("http://localhost/lms-admin/attendances/create_attendance.php", {
+        method: "POST",
         credentials: "include",
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
+          "Content-Type": "application/x-www-form-urlencoded",
         },
         body: formData.toString(),
       });
@@ -177,7 +177,7 @@ export default function Attendance() {
       if (result.success) {
         alert("Attendance marked successfully!");
         fetchAttendances(); // Refresh the attendance data
-        setStudentIndex('');
+        setStudentIndex("");
       
       } else {
         alert("Failed to mark attendance: " + result.message);
@@ -227,7 +227,7 @@ const handleCourseChange = async (event) => {
   const courseId = event.target.value;
   setSelectedCourse(courseId);
   await fetchBatches(courseId); // Fetch batches for the selected course
-  setSelectedBatch(''); // Reset batch selection when course changes
+  setSelectedBatch(""); // Reset batch selection when course changes
 };
 
 const handleBatchChange = (event) => {
@@ -243,15 +243,15 @@ const handleSMSUnattendees = async () => {
   }
   try {
     const formData = new URLSearchParams();
-    formData.append('course_id', selectedCourse);
-    formData.append('batch_id', selectedBatch);
-    formData.append('date', date);
+    formData.append("course_id", selectedCourse);
+    formData.append("batch_id", selectedBatch);
+    formData.append("date", date);
   
-    const response = await fetch('http://localhost/lms-admin/attendances/sms_unattendees.php', {
-      method: 'POST',
+    const response = await fetch("http://localhost/lms-admin/attendances/sms_unattendees.php", {
+      method: "POST",
       credentials: "include",
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
+        "Content-Type": "application/x-www-form-urlencoded",
       },
       body: formData.toString(),
     });

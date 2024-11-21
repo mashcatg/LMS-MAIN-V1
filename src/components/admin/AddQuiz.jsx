@@ -276,8 +276,8 @@ const AddQuiz = ({ onQuizAdded, editingQuiz, setEditingQuiz }) => {
             <Checkbox
               id="multiple-availability"
               className="text-primary border-primary focus:ring-primary focus:border-primary"
-              checked={isMultipleAvailability === '1'}
-              onChange={(e) => setIsMultipleAvailability(e.target.checked ? '1' : '0')}
+              checked={isMultipleAvailability === "1"}
+              onChange={(e) => setIsMultipleAvailability(e.target.checked ? "1" : "0")}
             />
             <label
               htmlFor="multiple-availability"
@@ -290,8 +290,8 @@ const AddQuiz = ({ onQuizAdded, editingQuiz, setEditingQuiz }) => {
             <Checkbox
               id="student-visibility"
               className="text-primary border-primary focus:ring-primary focus:border-primary"
-              checked={studentVisibility === '1'}
-              onChange={(e) => setStudentVisibility(e.target.checked ? '1' : '0')}
+              checked={studentVisibility === "1"}
+              onChange={(e) => setStudentVisibility(e.target.checked ? "1" : "0")}
             />
             <label
               htmlFor="student-visibility"

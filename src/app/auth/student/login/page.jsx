@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 
 export const description =
-  "A login page with two columns. The first column has the login form with email and password. There's a Forgot your password link and a link to sign up if you do not have an account. The second column has a cover image.";
+  "A login page with two columns. The first column has the login form with email and password. There"s a Forgot your password link and a link to sign up if you do not have an account. The second column has a cover image.";
 
 export default function Dashboard() {
   const [phone, setPhone] = useState("");
@@ -20,30 +20,30 @@ export default function Dashboard() {
     setLoading(true);
     setError(""); // Reset error message
   
-    fetch('https://youthsthought.com/lms-backend/student-panel/student-auth/login.php', {
-        method: 'POST',
+    fetch("https://youthsthought.com/lms-backend/student-panel/student-auth/login.php", {
+        method: "POST",
         headers: {
-            'Content-Type': 'application/json',  // Ensure proper content type
+            "Content-Type": "application/json",  // Ensure proper content type
         },
         body: JSON.stringify({
             phone: phone,
             password: password,
         }),
-        credentials: 'include'  
+        credentials: "include"  
     })
     .then(response => response.json())
     .then(data => {
       // If login is successful (data.success is true)
       if (data.success) {
         // Redirect to student dashboard page
-        router.push('/student/');
+        router.push("/student/");
       } else {
         // Handle error - for example, display error message
         setError(data.message || "Invalid login credentials.");
       }
     })
     .catch(error => {
-      console.error('Error:', error);
+      console.error("Error:", error);
       setError("An error occurred. Please try again.");
     })
     .finally(() => {

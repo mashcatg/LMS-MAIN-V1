@@ -26,19 +26,19 @@ export default function Home() {
   useEffect(() => {
     const fetchDash = async () => {
       try {
-        const response = await fetch('http://localhost/lms-admin/dash/fetch_dash_widget.php', {
-          method: 'GET',
-          credentials: 'include',
+        const response = await fetch("http://localhost/lms-admin/dash/fetch_dash_widget.php", {
+          method: "GET",
+          credentials: "include",
         });
         const data = await response.json();
-        console.log('Fetched widgets:', data); // Log the fetched data
+        console.log("Fetched widgets:", data); // Log the fetched data
         if (data.error) {
-          console.error('Failed to fetch widgets:', data.error);
+          console.error("Failed to fetch widgets:", data.error);
         } else {
           setDash(data.widgets[0]);
         }
       } catch (error) {
-        console.error('An error occurred during widget fetch:', error);
+        console.error("An error occurred during widget fetch:", error);
       }
     };
   

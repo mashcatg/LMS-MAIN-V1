@@ -36,7 +36,7 @@ import {
 
 export default function Results() {
   const [examDetails, setExamDetails] = useState(null);  // Separate state for exam details
-  const [students, setStudents] = useState([]);  // State for students' marks
+  const [students, setStudents] = useState([]);  // State for students marks
   const [error, setError] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
@@ -167,7 +167,7 @@ export default function Results() {
           <div>
             <CardTitle>Results</CardTitle>
             <CardDescription>
-              Add students' marks and edit them as needed.
+              Add students marks and edit them as needed.
             </CardDescription>
             {examDetails && (
               <div className="mt-2">

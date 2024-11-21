@@ -323,14 +323,14 @@ const Settings = () => {
   const handleSave = async () => {
     const formData = new FormData();
     
-    if (faviconFile) formData.append('favicon', faviconFile);
-    if (logoFile) formData.append('logo', logoFile);
+    if (faviconFile) formData.append("favicon", faviconFile);
+    if (logoFile) formData.append("logo", logoFile);
     
-    formData.append('site_name', siteName);
-    formData.append('phone_number', phoneNumber);
-    formData.append('location', location);
-    formData.append('colors', JSON.stringify(colors)); 
-    formData.append('social_links', JSON.stringify(socialMediaLinks));
+    formData.append("site_name", siteName);
+    formData.append("phone_number", phoneNumber);
+    formData.append("location", location);
+    formData.append("colors", JSON.stringify(colors)); 
+    formData.append("social_links", JSON.stringify(socialMediaLinks));
 
     try {
         const response = await fetch(

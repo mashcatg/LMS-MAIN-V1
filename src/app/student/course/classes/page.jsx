@@ -6,13 +6,13 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function ClassPlaylists() {
   const [playlistData, SetPlaylists] = useState([]);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   
 const fetchPlaylists = async () => {
   try {
-    const response = await fetch('https://youthsthought.com/lms-backend/student-panel/classes/fetch_playlists.php', {
-      method: 'GET',
-      credentials: 'include',
+    const response = await fetch("https://youthsthought.com/lms-backend/student-panel/classes/fetch_playlists.php", {
+      method: "GET",
+      credentials: "include",
     });
     const data = await response.json();
     console.log(data);
@@ -22,8 +22,8 @@ const fetchPlaylists = async () => {
       SetPlaylists(data.playlistData || []);
     }
   } catch (error) {
-    console.error('Error fetching playlists:', error);
-    setError('Error fetching playlists');
+    console.error("Error fetching playlists:", error);
+    setError("Error fetching playlists");
   }
 };
 // Fetch playlists on component mount

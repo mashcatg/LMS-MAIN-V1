@@ -34,8 +34,8 @@ const AddExam = ({ onExamAdded, exam, setEditingExam, isSidebarOpen, toggleSideb
       setCqMarks(exam.cq_marks);
       setPracticalMarks(exam.practical_marks);
       setBonusMarks(exam.bonus_marks);
-      setStudentVisibility(exam.student_visibility === '1');
-      setSelectedCourseIds(exam.course_id.split(','));
+      setStudentVisibility(exam.student_visibility === "1");
+      setSelectedCourseIds(exam.course_id.split(","));
     } else {
       // Reset fields if not in edit mode
       resetFields();
@@ -67,9 +67,9 @@ const AddExam = ({ onExamAdded, exam, setEditingExam, isSidebarOpen, toggleSideb
       exam_date: examDate,
       mcq_marks: mcqMarks,
       cq_marks: cqMarks,
-      practical_marks: practicalMarks || '',
-      bonus_marks: bonusMarks || '',
-      student_visibility: studentVisibility ? '1' : '0',
+      practical_marks: practicalMarks || "",
+      bonus_marks: bonusMarks || "",
+      student_visibility: studentVisibility ? "1" : "0",
       course_id: selectedCourseIds.join(","),
     });
 
@@ -84,12 +84,12 @@ const AddExam = ({ onExamAdded, exam, setEditingExam, isSidebarOpen, toggleSideb
 
     const result = await response.json();
     if (result.success) {
-      alert(`Exam ${exam ? 'updated' : 'added'} successfully!`);
+      alert(`Exam ${exam ? "updated" : "added"} successfully!`);
       toggleSidebar(); // Close the sidebar after submission
       onExamAdded(); // Call the function to update the exam list without reloading
       resetFields();
     } else {
-      alert(`Failed to ${exam ? 'update' : 'add'} exam: ` + result.message);
+      alert(`Failed to ${exam ? "update" : "add"} exam: ` + result.message);
     }
   };
 
