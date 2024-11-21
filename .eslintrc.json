@@ -8,7 +8,8 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:next/recommended"
+    "plugin:next/recommended",
+    "next/core-web-configs"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -19,7 +20,8 @@
   },
   "plugins": [
     "next",
-    "react"
+    "react",
+    "@next/next"
   ],
   "rules": {
     "react-hooks/exhaustive-deps": "off", 

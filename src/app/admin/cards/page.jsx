@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import Link from "next/link";
 import {
   ChevronDown,
@@ -178,6 +178,7 @@ fetchCourses();
     setEditingCard(card);
 };
   return (
+    <Suspense fallback={<div>Loading...</div>}>
     <main className="grid flex-1 items-start gap-4 sm:py-0 md:gap-8">
       <Card x-chunk="dashboard-06-chunk-0" className="overflow-x-auto">
         {/* Header Section */}
@@ -393,5 +394,6 @@ fetchCourses();
       )}
       <AddCard onCardAdded={handleCardAdded} />
     </main>
+    </Suspense>
   );
 }
