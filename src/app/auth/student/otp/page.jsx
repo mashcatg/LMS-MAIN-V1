@@ -6,7 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 export const description =
   "An OTP verification page where users can enter the OTP sent to their phone number to reset their password.";
 
-export default function OTPVerification() {
+function OTPContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [phone, setPhone] = useState("");
@@ -67,7 +67,6 @@ export default function OTPVerification() {
   }
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
     <div className="w-full min-h-[100vh] lg:grid lg:grid-cols-2">
       <div className="flex items-center justify-center py-12">
         <div className="mx-auto grid w-[350px] gap-6">
@@ -113,6 +112,7 @@ export default function OTPVerification() {
 
           <div className="mt-4 text-center text-sm">
             Didn"t receive the OTP?{" "}
+
             <button
               onClick={() => router.push(`forgot-password`)} // Redirect to Forgot Password page to resend OTP
               className="underline text-primary"
@@ -124,6 +124,13 @@ export default function OTPVerification() {
       </div>
       <div className="hidden lg:block h-full w-full object-cover dark:brightness-[0.2] dark:grayscale bg-primary"></div>
     </div>
+  );
+}
+
+export default function OTPVerification() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <OTPContent />
     </Suspense>
   );
 }
