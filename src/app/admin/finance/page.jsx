@@ -65,7 +65,7 @@ function Payments() {
   const fetchPayments = async () => {
     try {
       const response = await fetch(
-        "http://localhost/lms-admin/finance/fetch_payments.php",
+        "http://lms.ennovat.com/lms-admin/finance/fetch_payments.php",
         {
           method: "GET",
           credentials: "include",
@@ -89,7 +89,7 @@ function Payments() {
   }, []);
   const handlePaymentDelete = async (paymentId) => {
     try {
-      const response = await fetch(`http://localhost/lms-admin/finance/delete_payment.php?payment_id=${paymentId}`, {
+      const response = await fetch(`http://lms.ennovat.com/lms-admin/finance/delete_payment.php?payment_id=${paymentId}`, {
         method: "DELETE",
         credentials: "include",
       });
@@ -357,7 +357,7 @@ function Expense() {
 
   const fetchExpenseSectors = async () => {
     try {
-      const response = await fetch("http://localhost/lms-admin/finance/fetch_expense_sectors.php", {
+      const response = await fetch("http://lms.ennovat.com/lms-admin/finance/fetch_expense_sectors.php", {
         method: "GET",
         credentials: "include",
       });
@@ -377,7 +377,7 @@ function Expense() {
 
   const fetchExpense = async () => {
     try {
-      const response = await fetch("http://localhost/lms-admin/finance/fetch_expenses.php", {
+      const response = await fetch("http://lms.ennovat.com/lms-admin/finance/fetch_expenses.php", {
         method: "GET",
         credentials: "include",
       });
@@ -397,7 +397,7 @@ function Expense() {
   const handleAddSector = async () => {
     if (newSector.trim() !== "") {
       try {
-        const response = await fetch("http://localhost/lms-admin/finance/create_expense_sector.php", {
+        const response = await fetch("http://lms.ennovat.com/lms-admin/finance/create_expense_sector.php", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -430,7 +430,7 @@ function Expense() {
 
   const handleDeleteSector = async (sectorId) => {
     try {
-      const response = await fetch(`http://localhost/lms-admin/finance/delete_expense_sector.php`, {
+      const response = await fetch(`http://lms.ennovat.com/lms-admin/finance/delete_expense_sector.php`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -453,7 +453,7 @@ function Expense() {
   
   const handleDelete = async (expenseId) => {
     try {
-      const response = await fetch(`http://localhost/lms-admin/finance/delete_expense.php`, {
+      const response = await fetch(`http://lms.ennovat.com/lms-admin/finance/delete_expense.php`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

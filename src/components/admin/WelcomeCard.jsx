@@ -5,7 +5,7 @@ const WelcomeCard = () => {
   useEffect(() => {
   const fetchProfileData = async () => {
     try {
-      const response = await fetch("http://localhost/lms-admin/profile.php", {
+      const response = await fetch("http://lms.ennovat.com/lms-admin/profile.php", {
           method: "GET",
           credentials: "include", 
       });

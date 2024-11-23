@@ -8,7 +8,7 @@ const useAuth = (setLoading, setIsAuthenticated) => {
   const checkAuth = async () => {
     setLoading(true);
     try {
-      const response = await fetch("http://localhost/lms-admin/check_auth.php", {
+      const response = await fetch("http://lms.ennovat.com/lms-admin/check_auth.php", {
         method: "POST",
         credentials: "include",
         headers: {

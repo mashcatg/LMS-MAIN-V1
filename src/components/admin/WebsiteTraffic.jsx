@@ -40,7 +40,7 @@ export function WebsiteTraffic() {
   React.useEffect(() => {
     const fetchChartData = async () => {
       try {
-        const response = await fetch("http://localhost/lms-admin/dash/fetch_traffic.php", {
+        const response = await fetch("http://lms.ennovat.com/lms-admin/dash/fetch_traffic.php", {
           method: "GET",
           credentials: "include",
         });

@@ -22,7 +22,7 @@ const PrintStudentCard = ({ params }) => {
       const fetchStudentData = async () => {
         try {
           const response = await fetch(
-            `http://localhost/lms-admin/cards/fetch_print_data.php?card_id=${encodeURIComponent(
+            `http://lms.ennovat.com/lms-admin/cards/fetch_print_data.php?card_id=${encodeURIComponent(
               card_id
             )}`,
             {

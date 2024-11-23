@@ -65,7 +65,7 @@ export default function Classes() {
     const fetchClasses = async () => {
       try {
         const response = await fetch(
-          `http://localhost/lms-admin/classes/fetch_classes.php?playlist_id=${playlist_id}`,
+          `http://lms.ennovat.com/lms-admin/classes/fetch_classes.php?playlist_id=${playlist_id}`,
           {
             method: "GET",
             credentials: "include",
@@ -124,7 +124,7 @@ export default function Classes() {
     // Update the class indexes in the database
     try {
       const response = await fetch(
-        `http://localhost/lms-admin/classes/update_class_order.php`,
+        `http://lms.ennovat.com/lms-admin/classes/update_class_order.php`,
         {
           method: "POST",
           credentials: "include",
@@ -164,7 +164,7 @@ export default function Classes() {
   
     try {
       const response = await fetch(
-        `http://localhost/lms-admin/classes/delete_class.php?class_id=${classId}&playlist_id=${playlistId}`,
+        `http://lms.ennovat.com/lms-admin/classes/delete_class.php?class_id=${classId}&playlist_id=${playlistId}`,
         {
           method: "DELETE", 
           credentials: "include", 

@@ -60,7 +60,7 @@ const AddExpense = ({ sectors, onExpenseAdded, existingExpense, isEditing, setIs
     try {
       const endpoint = isEditing ? "edit_expense.php" : "create_expense.php";
       const response = await fetch(
-        `http://localhost/lms-admin/finance/${endpoint}`,
+        `http://lms.ennovat.com/lms-admin/finance/${endpoint}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

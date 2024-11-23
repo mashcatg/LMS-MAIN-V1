@@ -18,7 +18,7 @@ const AddBatch = ({ onBatchAdded, onBatchEdited, editingBatch, onClose }) => {
     const fetchCourses = async () => {
       try {
         const response = await fetch(
-          "http://localhost/lms-admin/courses/fetch_courses.php",
+          "http://lms.ennovat.com/lms-admin/courses/fetch_courses.php",
           {
             method: "GET",
             credentials: "include",
@@ -38,7 +38,7 @@ const AddBatch = ({ onBatchAdded, onBatchEdited, editingBatch, onClose }) => {
     const fetchBranches = async () => {
       try {
         const response = await fetch(
-          "http://localhost/lms-admin/branches/fetch_branches.php",
+          "http://lms.ennovat.com/lms-admin/branches/fetch_branches.php",
           {
             method: "GET",
             credentials: "include",
@@ -91,7 +91,7 @@ const AddBatch = ({ onBatchAdded, onBatchEdited, editingBatch, onClose }) => {
 
     try {
       const response = await fetch(
-        "http://localhost/lms-admin/batches/edit_batch.php",
+        "http://lms.ennovat.com/lms-admin/batches/edit_batch.php",
         {
           method: "POST",
           headers: {

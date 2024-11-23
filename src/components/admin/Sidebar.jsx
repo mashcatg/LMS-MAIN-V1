@@ -62,7 +62,7 @@ export default function Sidebar({ isCollapsed, setIsCollapsed }) {
     // Check authentication function
     const checkAuth = async (url) => {
       try {
-        const response = await fetch("http://localhost/lms-admin/check_auth.php", {
+        const response = await fetch("http://lms.ennovat.com/lms-admin/check_auth.php", {
           method: "POST",
           credentials: "include",
           headers: {

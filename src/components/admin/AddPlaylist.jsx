@@ -19,7 +19,7 @@ const AddPlaylist = ({ onPlaylistAdded, playlist, setEditingPlaylist }) => {
 
   useEffect(() => {
     const fetchCourses = async () => {
-      const response = await fetch("http://localhost/lms-admin/courses/fetch_courses.php", {
+      const response = await fetch("http://lms.ennovat.com/lms-admin/courses/fetch_courses.php", {
         credentials: "include",
       });
       const data = await response.json();
@@ -59,7 +59,7 @@ const AddPlaylist = ({ onPlaylistAdded, playlist, setEditingPlaylist }) => {
       ...(playlist && { id: playlist.playlist_id }), // Add ID if editing
     });
 
-    const response = await fetch(`http://localhost/lms-admin/classes/${endpoint}`, {
+    const response = await fetch(`http://lms.ennovat.com/lms-admin/classes/${endpoint}`, {
       method: "POST",
       credentials: "include",
       headers: {

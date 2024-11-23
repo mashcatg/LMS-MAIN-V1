@@ -16,7 +16,7 @@ const AddExam = ({ onExamAdded, exam, setEditingExam, isSidebarOpen, toggleSideb
 
   useEffect(() => {
     const fetchCourses = async () => {
-      const response = await fetch("http://localhost/lms-admin/courses/fetch_courses.php", {
+      const response = await fetch("http://lms.ennovat.com/lms-admin/courses/fetch_courses.php", {
         credentials: "include",
       });
       const data = await response.json();
@@ -60,7 +60,7 @@ const AddExam = ({ onExamAdded, exam, setEditingExam, isSidebarOpen, toggleSideb
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const endpoint = exam ? "http://localhost/lms-admin/exams/update_exam.php" : "http://localhost/lms-admin/exams/create_exams.php";
+    const endpoint = exam ? "http://lms.ennovat.com/lms-admin/exams/update_exam.php" : "http://lms.ennovat.com/lms-admin/exams/create_exams.php";
     const body = new URLSearchParams({
       exam_id: exam?.exam_id, // Include exam_id only when updating
       exam_name: examName,

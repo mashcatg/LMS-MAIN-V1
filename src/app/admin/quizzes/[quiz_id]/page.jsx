@@ -67,7 +67,7 @@ function Questions() {
     const fetchQuestions = async (quizId) => {
       try {
         const response = await fetch(
-          `http://localhost/lms-admin/quizzes/fetch_questions.php?quiz_id=${quizId}`,
+          `http://lms.ennovat.com/lms-admin/quizzes/fetch_questions.php?quiz_id=${quizId}`,
           {
             method: "GET",
             credentials: "include",
@@ -123,7 +123,7 @@ function Questions() {
     if (!window.confirm("Are you sure you want to delete this question?")) return;
   
     try {
-      const response = await fetch(`http://localhost/lms-admin/quizzes/delete_question.php?question_id=${questionId}`, {
+      const response = await fetch(`http://lms.ennovat.com/lms-admin/quizzes/delete_question.php?question_id=${questionId}`, {
         method: "DELETE",
         credentials: "include",
       });
@@ -390,7 +390,7 @@ function Leaderboard() {
     const fetchLeaderboard = async () => {
       try {
         const response = await fetch(
-          `http://localhost/lms-admin/quizzes/fetch_leaderboard.php?quiz_id=${quizId}`,
+          `http://lms.ennovat.com/lms-admin/quizzes/fetch_leaderboard.php?quiz_id=${quizId}`,
           {
             method: "GET",
             credentials: "include",

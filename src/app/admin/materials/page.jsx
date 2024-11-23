@@ -92,7 +92,7 @@ export default function Materials() {
 
       const response = await fetch(
 
-        "http://localhost/lms-admin/materials/fetch_materials.php",
+        "http://lms.ennovat.com/lms-admin/materials/fetch_materials.php",
 
         {
 
@@ -166,7 +166,7 @@ export default function Materials() {
 
         const response = await fetch(
 
-          `http://localhost/lms-admin/materials/delete_material.php?material_id=${materialId}`,
+          `http://lms.ennovat.com/lms-admin/materials/delete_material.php?material_id=${materialId}`,
 
           {
 

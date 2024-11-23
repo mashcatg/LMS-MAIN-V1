@@ -52,7 +52,7 @@ function AdminTraffic() {
     useEffect(() => {
       const fetchSMS = async () => {
         try {
-          const response = await fetch("http://localhost/lms-admin/sms/fetch_sms.php", {
+          const response = await fetch("http://lms.ennovat.com/lms-admin/sms/fetch_sms.php", {
             method: "GET",
             credentials: "include",
           });
@@ -293,7 +293,7 @@ function StudentTraffic() {
     
       const fetchSMSTransactions = async () => {
         try {
-          const response = await fetch("http://localhost/lms-admin/sms/fetch_transactions.php", {
+          const response = await fetch("http://lms.ennovat.com/lms-admin/sms/fetch_transactions.php", {
             method: "GET",
             credentials: "include",
           });
@@ -319,7 +319,7 @@ function StudentTraffic() {
     };
     const fetchSMS = async () => {
         try {
-          const response = await fetch("http://localhost/lms-admin/sms/fetch_sms.php", {
+          const response = await fetch("http://lms.ennovat.com/lms-admin/sms/fetch_sms.php", {
             method: "GET",
             credentials: "include",
           });
@@ -343,7 +343,7 @@ function StudentTraffic() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const response = await fetch("http://localhost/lms-admin/sms/purchase_sms.php", {
+          const response = await fetch("http://lms.ennovat.com/lms-admin/sms/purchase_sms.php", {
             method: "POST",
             headers: {
               "Content-Type": "application/x-www-form-urlencoded",

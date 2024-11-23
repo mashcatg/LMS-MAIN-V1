@@ -27,7 +27,7 @@ export default function Playlists() {
     const confirmDelete = confirm("Are you sure you want to delete this playlist?");
     if (confirmDelete) {
       try {
-        const response = await fetch(`http://localhost/lms-admin/classes/delete_playlist.php?id=${playlist_id}`, {
+        const response = await fetch(`http://lms.ennovat.com/lms-admin/classes/delete_playlist.php?id=${playlist_id}`, {
           method: "DELETE",
           credentials: "include",
         });
@@ -46,7 +46,7 @@ export default function Playlists() {
   };
   const fetchPlaylists = async () => {
     try {
-      const response = await fetch("http://localhost/lms-admin/classes/fetch_playlists.php", {
+      const response = await fetch("http://lms.ennovat.com/lms-admin/classes/fetch_playlists.php", {
         method: "GET",
         credentials: "include",
       });

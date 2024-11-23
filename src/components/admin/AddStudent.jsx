@@ -64,14 +64,14 @@ const AddStudent = ({ onStudentAdded, student, setEditingStudent }) => {
         let response;
         if (student) {
             // Update student if editing
-            response = await fetch(`http://localhost/lms-admin/students/edit_student.php?student_id=${student.student_id}`, {
+            response = await fetch(`http://lms.ennovat.com/lms-admin/students/edit_student.php?student_id=${student.student_id}`, {
                 method: "POST",
                 body: formDataToSend,
                 credentials: "include",
             });
         } else {
             // Add a new student if not editing
-            response = await fetch("http://localhost/lms-admin/students/create_student.php", {
+            response = await fetch("http://lms.ennovat.com/lms-admin/students/create_student.php", {
                 method: "POST",
                 body: formDataToSend,
                 credentials: "include",

@@ -11,7 +11,7 @@ export default function ProfileSidebar({ onClose, isClosing }) {
   useEffect(() => {
     const fetchProfileData = async () => {
       try {
-        const response = await fetch("http://localhost/lms-admin/profile.php", {
+        const response = await fetch("http://lms.ennovat.com/lms-admin/profile.php", {
             method: "GET",
             credentials: "include", 
         });
@@ -36,7 +36,7 @@ export default function ProfileSidebar({ onClose, isClosing }) {
 
   const handleLogout = async () => {
     try {
-        const response = await fetch("http://localhost/lms-admin/logout.php", {
+        const response = await fetch("http://lms.ennovat.com/lms-admin/logout.php", {
             method: "POST",
             credentials: "include",
         });

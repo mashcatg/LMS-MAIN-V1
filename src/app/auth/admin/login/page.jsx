@@ -13,7 +13,7 @@ export default function Dashboard() {
     useEffect(() => {
         const checkAuth = async () => {
             try {
-                const response = await fetch("http://localhost/lms-admin/check_auth.php", {
+                const response = await fetch("http://lms.ennovat.com/lms-admin/check_auth.php", {
                     method: "GET",
                     credentials: "include",
                 });
@@ -54,7 +54,7 @@ export default function Dashboard() {
         urlEncodedData.append("password", formData.password);
 
         try {
-            const response = await fetch("http://localhost/lms-admin/login.php", {
+            const response = await fetch("http://lms.ennovat.com/lms-admin/login.php", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded",

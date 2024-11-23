@@ -20,7 +20,7 @@ export default function ChangeProfile() {
   useEffect(() => {
     const fetchProfileData = async () => {
       try {
-        const response = await fetch("http://localhost/lms-admin/profile.php", {
+        const response = await fetch("http://lms.ennovat.com/lms-admin/profile.php", {
             method: "GET",
             credentials: "include", 
         });
@@ -87,7 +87,7 @@ export default function ChangeProfile() {
     }
 
     try {
-      const response = await fetch("http://localhost/lms-admin/edit-profile.php", {
+      const response = await fetch("http://lms.ennovat.com/lms-admin/edit-profile.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

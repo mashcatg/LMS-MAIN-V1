@@ -60,7 +60,7 @@ function Students() {
     const totalPages = Math.ceil(students.length / itemsPerPage);
     const fetchStudents = async () => {
       try {
-          const response = await fetch("http://localhost/lms-admin/students/fetch_students.php", {
+          const response = await fetch("http://lms.ennovat.com/lms-admin/students/fetch_students.php", {
               method: "GET",
               credentials: "include",
           });
@@ -89,7 +89,7 @@ function Students() {
   const deleteStudent = async (studentId) => {
     if (window.confirm("Are you sure you want to delete this student?")) {
           try {
-          const response = await fetch(`http://localhost/lms-admin/students/delete_student.php?student_id=${studentId}`, {
+          const response = await fetch(`http://lms.ennovat.com/lms-admin/students/delete_student.php?student_id=${studentId}`, {
             method: "DELETE",
             headers: {
               "Content-Type": "application/json",
@@ -292,7 +292,7 @@ function Enrollments() {
     const fetchEnrollments = async () => {
       try {
         const response = await fetch(
-          "http://localhost/lms-admin/students/fetch_enrollments.php",
+          "http://lms.ennovat.com/lms-admin/students/fetch_enrollments.php",
           {
             method: "GET",
             credentials: "include",
@@ -317,7 +317,7 @@ function Enrollments() {
     const fetchCourses = async () => {
       try {
         const response = await fetch(
-          "http://localhost/lms-admin/courses/fetch_courses.php",
+          "http://lms.ennovat.com/lms-admin/courses/fetch_courses.php",
           {
             method: "GET",
             credentials: "include",
@@ -342,7 +342,7 @@ function Enrollments() {
     const fetchBatches = async () => {
       try {
         const response = await fetch(
-          "http://localhost/lms-admin/batches/fetch_batches.php",
+          "http://lms.ennovat.com/lms-admin/batches/fetch_batches.php",
           {
             method: "GET",
             credentials: "include",
@@ -367,7 +367,7 @@ function Enrollments() {
     if (!confirmed) return;
 
     try {
-        const response = await fetch("http://localhost/lms-admin/students/delete_enrollment.php", {
+        const response = await fetch("http://lms.ennovat.com/lms-admin/students/delete_enrollment.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -400,7 +400,7 @@ function Enrollments() {
     if (!confirmed) return;
 
     try {
-        const response = await fetch("http://localhost/lms-admin/students/delete_enrollment.php", {
+        const response = await fetch("http://lms.ennovat.com/lms-admin/students/delete_enrollment.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -429,7 +429,7 @@ function Enrollments() {
 
     try {
       const response = await fetch(
-        "http://localhost/lms-admin/notices/create_notice.php",
+        "http://lms.ennovat.com/lms-admin/notices/create_notice.php",
         {
           method: "POST",
           headers: {
@@ -517,7 +517,7 @@ function Enrollments() {
 
     try {
       const response = await fetch(
-        "http://localhost/lms-admin/sms/create_custom_sms.php",
+        "http://lms.ennovat.com/lms-admin/sms/create_custom_sms.php",
         {
           method: "POST",
           headers: {
@@ -543,7 +543,7 @@ function Enrollments() {
 
     try {
       const response = await fetch(
-        "http://localhost/lms-admin/sms/due_sms.php",
+        "http://lms.ennovat.com/lms-admin/sms/due_sms.php",
         {
           method: "POST",
           headers: {

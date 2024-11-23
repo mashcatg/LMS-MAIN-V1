@@ -31,7 +31,7 @@ const AddNote = ({ onNoteAdded, note, setEditingNote }) => {
 
     useEffect(() => {
         const fetchCourses = async () => {
-            const response = await fetch("http://localhost/lms-admin/courses/fetch_courses.php", {
+            const response = await fetch("http://lms.ennovat.com/lms-admin/courses/fetch_courses.php", {
                 credentials: "include",
             });
             const data = await response.json();
@@ -39,7 +39,7 @@ const AddNote = ({ onNoteAdded, note, setEditingNote }) => {
         };
 
         const fetchTags = async () => {
-            const response = await fetch("http://localhost/lms-admin/notes/select_box_fetch_notes.php", {
+            const response = await fetch("http://lms.ennovat.com/lms-admin/notes/select_box_fetch_notes.php", {
                 credentials: "include",
             });
             const data = await response.json();
@@ -72,7 +72,7 @@ const AddNote = ({ onNoteAdded, note, setEditingNote }) => {
         setSelectedCourseIds(selectedIds);
         if (selectedIds.length) {
             const courseIds = selectedIds.join(",");
-            fetch(`http://localhost/lms-admin/batches/fetch_course_batch.php?course_ids=${courseIds}`, {
+            fetch(`http://lms.ennovat.com/lms-admin/batches/fetch_course_batch.php?course_ids=${courseIds}`, {
                 credentials: "include",
             })
                 .then(response => response.json())
@@ -110,7 +110,7 @@ const AddNote = ({ onNoteAdded, note, setEditingNote }) => {
         }
 
         try {
-            const url = note ? `http://localhost/lms-admin/notes/update_note.php?note_id=${note.note_id}` : "http://localhost/lms-admin/notes/create_note.php";
+            const url = note ? `http://lms.ennovat.com/lms-admin/notes/update_note.php?note_id=${note.note_id}` : "http://lms.ennovat.com/lms-admin/notes/create_note.php";
             if (note) {
                 formData.append("note_id", note.note_id);
             }

@@ -68,7 +68,7 @@ export default function Cards({ params }) {
       const fetchStudents = async () => {
         try {
           const response = await fetch(
-            `http://localhost/lms-admin/cards/fetch_students.php?card_id=${encodeURIComponent(
+            `http://lms.ennovat.com/lms-admin/cards/fetch_students.php?card_id=${encodeURIComponent(
               card_id
             )}`,
             {

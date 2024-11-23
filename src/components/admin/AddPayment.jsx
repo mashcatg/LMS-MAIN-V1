@@ -27,8 +27,8 @@ const AddPayment = ({ onPaymentAdd, payment, isEditing, setIsEditing, isSidebarO
     e.preventDefault();
     
     const endpoint = isEditing 
-      ? `http://localhost/lms-admin/finance/edit_payment.php` 
-      : `http://localhost/lms-admin/finance/create_payment.php`;
+      ? `http://lms.ennovat.com/lms-admin/finance/edit_payment.php` 
+      : `http://lms.ennovat.com/lms-admin/finance/create_payment.php`;
   
     try {
       const response = await fetch(endpoint, {

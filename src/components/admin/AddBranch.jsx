@@ -36,7 +36,7 @@ const AddBranch = ({ onBranchAdded, onBranchEdited, editingBranch, onClose }) =>
     }
 
     try {
-      const response = await fetch(editingBranch ? "http://localhost/lms-admin/branches/edit_branch.php" : "http://localhost/lms-admin/branches/create_branch.php", {
+      const response = await fetch(editingBranch ? "http://lms.ennovat.com/lms-admin/branches/edit_branch.php" : "http://lms.ennovat.com/lms-admin/branches/create_branch.php", {
         method: "POST",
         body: formData,
         credentials: "include",
