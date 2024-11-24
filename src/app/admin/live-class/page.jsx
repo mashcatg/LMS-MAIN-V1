@@ -61,7 +61,7 @@ export default function LiveClasses() {
 
   const fetchLiveClasses = async () => {
     try {
-      const response = await fetch("http://localhost/lms-admin/live-classes/fetch_live_classes.php", {
+      const response = await fetch("http://lms.ennovat.com/lms-admin/live-classes/fetch_live_classes.php", {
         method: "GET",
         credentials: "include",
       });
@@ -98,7 +98,7 @@ export default function LiveClasses() {
   const handleDeleteLiveClass = async (liveClassId) => {
     if (confirm("Are you sure you want to delete this live class?")) {
       try {
-        const response = await fetch(`http://localhost/lms-admin/live-classes/delete_live_class.php?live_class_id=${liveClassId}`, {
+        const response = await fetch(`http://lms.ennovat.com/lms-admin/live-classes/delete_live_class.php?live_class_id=${liveClassId}`, {
           method: "POST", // Changed from DELETE to POST as it"s more common for PHP scripts
           credentials: "include",
           headers: {

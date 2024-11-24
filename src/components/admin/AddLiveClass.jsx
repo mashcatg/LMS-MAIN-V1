@@ -24,7 +24,7 @@ const AddLiveClass = ({ onLiveClassAdded, editingLiveClass, setEditingLiveClass 
 
   useEffect(() => {
     const fetchCourses = async () => {
-      const response = await fetch("http://localhost/lms-admin/courses/fetch_courses.php", {
+      const response = await fetch("http://lms.ennovat.com/lms-admin/courses/fetch_courses.php", {
         credentials: "include",
       });
       const data = await response.json();
@@ -57,7 +57,7 @@ const AddLiveClass = ({ onLiveClassAdded, editingLiveClass, setEditingLiveClass 
     // Fetch batches for selected courses
     if (selectedIds.length) {
         const courseIds = selectedIds.join(",");
-        const response = await fetch(`http://localhost/lms-admin/batches/fetch_course_batch.php?course_ids=${courseIds}`, {
+        const response = await fetch(`http://lms.ennovat.com/lms-admin/batches/fetch_course_batch.php?course_ids=${courseIds}`, {
             credentials: "include",
         });
         const data = await response.json();
@@ -84,7 +84,7 @@ const handleSubmit = async (e) => {
     formData.append("course_id", selectedCourseIdsStr);
     formData.append("batch_id", selectedBatchIdsStr);
   
-    const response = await fetch(editingLiveClass ? `http://localhost/lms-admin/live-classes/update_live_class.php?live_class_id=${editingLiveClass.live_class_id}` : "http://localhost/lms-admin/live-classes/create_live_class.php", {
+    const response = await fetch(editingLiveClass ? `http://lms.ennovat.com/lms-admin/live-classes/update_live_class.php?live_class_id=${editingLiveClass.live_class_id}` : "http://lms.ennovat.com/lms-admin/live-classes/create_live_class.php", {
       method: "POST",
       body: formData,
       credentials: "include",

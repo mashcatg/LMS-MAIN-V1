@@ -21,7 +21,7 @@ export default function ExpenseChart() {
   useEffect(() => {
     const fetchExpenses = async () => {
       try {
-        const response = await fetch("http://localhost/lms-admin/dash/fetch_expense_dash.php", {
+        const response = await fetch("http://lms.ennovat.com/lms-admin/dash/fetch_expense_dash.php", {
           method: "GET",
           credentials: "include",
         });

@@ -62,7 +62,7 @@ export default function Results() {
   useEffect(() => {
     const fetchMarks = async () => {
       const response = await fetch(
-        `http://localhost/lms-admin/marks/fetch_marks.php?exam_id=${examId}`,
+        `http://lms.ennovat.com/lms-admin/marks/fetch_marks.php?exam_id=${examId}`,
         {
           credentials: "include",
         }
@@ -94,7 +94,7 @@ export default function Results() {
 
     try {
       const response = await fetch(
-        `http://localhost/lms-admin/marks/update_marks.php?mark_id=${student.marks_id}`,
+        `http://lms.ennovat.com/lms-admin/marks/update_marks.php?mark_id=${student.marks_id}`,
         {
           method: "POST",
           headers: {

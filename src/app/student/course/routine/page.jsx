@@ -16,7 +16,7 @@ export default function Page() {
     const fetchRoutines = async () => {
       try {
         const response = await fetch(
-          "https://youthsthought.com/lms-backend/student-panel/routines/fetch_routines.php"
+          "http://lms.ennovat.com/lms-admin/student-panel/routines/fetch_routines.php"
         );
         
         if (!response.ok) {

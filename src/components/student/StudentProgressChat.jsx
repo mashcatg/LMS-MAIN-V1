@@ -35,7 +35,7 @@ export function StudentProgressChart() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://youthsthought.com/lms-backend/student-panel/dashWidgets/fetch_all_percentage.php"
+          "http://lms.ennovat.com/lms-admin/student-panel/dashWidgets/fetch_all_percentage.php"
         );
         const data = await response.json();
 

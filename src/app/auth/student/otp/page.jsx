@@ -30,7 +30,7 @@ function OTPContent() {
     setSuccess(false); // Reset success message
 
     // Send OTP verification request to the server
-    fetch("https://youthsthought.com/lms-backend/student-panel/student-auth/verify_otp.php", {
+    fetch("http://lms.ennovat.com/lms-admin/student-panel/student-auth/verify_otp.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json", // Ensure content type is application/json

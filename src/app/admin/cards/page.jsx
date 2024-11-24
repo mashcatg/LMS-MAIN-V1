@@ -67,7 +67,7 @@ const fetchCards = async () => {
   setLoading(true);
   try {
     const response = await fetch(
-      "http://localhost/lms-admin/cards/fetch_cards.php",
+      "http://lms.ennovat.com/lms-admin/cards/fetch_cards.php",
       {
         method: "GET",
         credentials: "include",
@@ -100,7 +100,7 @@ const fetchCourses = async () => {
   setLoading(true);
   try {
     const response = await fetch(
-      "http://localhost/lms-admin/courses/fetch_courses.php",
+      "http://lms.ennovat.com/lms-admin/courses/fetch_courses.php",
       {
         method: "GET",
         credentials: "include",
@@ -128,7 +128,7 @@ fetchCourses();
       setLoading(true);
       try {
         const response = await fetch(
-          `http://localhost/lms-admin/cards/delete_card.php?card_id=${cardId}`,
+          `http://lms.ennovat.com/lms-admin/cards/delete_card.php?card_id=${cardId}`,
           {
             method: "DELETE",
             credentials: "include",

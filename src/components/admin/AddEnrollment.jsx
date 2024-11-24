@@ -37,7 +37,7 @@ const AddEnrollment = ({ isFormOpen, onEnrollmentAdded, editData, onClose }) => 
   const fetchCourses = async () => {
     try {
       const response = await fetch(
-        "http://localhost/lms-admin/courses/fetch_courses.php",
+        "http://lms.ennovat.com/lms-admin/courses/fetch_courses.php",
         {
           method: "GET",
           credentials: "include",
@@ -56,7 +56,7 @@ const AddEnrollment = ({ isFormOpen, onEnrollmentAdded, editData, onClose }) => 
   const fetchBatches = async (courseId) => {
     try {
       const response = await fetch(
-        `http://localhost/lms-admin/batches/fetch_course_batch.php?course_ids=${courseId}`,
+        `http://lms.ennovat.com/lms-admin/batches/fetch_course_batch.php?course_ids=${courseId}`,
         {
           method: "GET",
           credentials: "include",
@@ -104,8 +104,8 @@ const AddEnrollment = ({ isFormOpen, onEnrollmentAdded, editData, onClose }) => 
   };
   const handleSubmit = async () => {
     const url = isEditMode
-      ? `http://localhost/lms-admin/students/edit_enrollment.php?enrollment_id=${selectedEnrollment.enrollment_id}`
-      : "http://localhost/lms-admin/students/create_enrollment.php";
+      ? `http://lms.ennovat.com/lms-admin/students/edit_enrollment.php?enrollment_id=${selectedEnrollment.enrollment_id}`
+      : "http://lms.ennovat.com/lms-admin/students/create_enrollment.php";
     
     const payload = {
       student_number: studentNumber,

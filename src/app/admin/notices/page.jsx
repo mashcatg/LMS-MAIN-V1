@@ -84,7 +84,7 @@ export default function Notices() {
   // Fetch notices from the server
   const fetchNotices = async () => {
     try {
-      const response = await fetch("http://localhost/lms-admin/notices/fetch_notices.php", {
+      const response = await fetch("http://lms.ennovat.com/lms-admin/notices/fetch_notices.php", {
         method: "GET",
         credentials: "include",
       });
@@ -115,7 +115,7 @@ export default function Notices() {
 
     try {
         const response = await fetch(
-            `http://localhost/lms-admin/notices/delete_notice.php?notice_id=${noticeId}`,
+            `http://lms.ennovat.com/lms-admin/notices/delete_notice.php?notice_id=${noticeId}`,
             {
                 method: "DELETE",
                 credentials: "include",

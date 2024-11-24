@@ -18,7 +18,7 @@ const NotificationSidebar = ({
     const fetchNotices = async () => {
       try {
         const response = await fetch(
-          "https://youthsthought.com/lms-backend/student-panel/notices/fetch_notices.php"
+          "http://lms.ennovat.com/lms-admin/student-panel/notices/fetch_notices.php"
         );
 
         if (!response.ok) {

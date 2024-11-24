@@ -56,7 +56,7 @@ export default function Quiz() {
   const fetchQuizzes = async () => {
     try {
       const response = await fetch(
-        "http://localhost/lms-admin/quizzes/fetch_quiz.php",
+        "http://lms.ennovat.com/lms-admin/quizzes/fetch_quiz.php",
         {
           method: "GET",
           credentials: "include",
@@ -108,7 +108,7 @@ export default function Quiz() {
     if (window.confirm("Are you sure you want to delete this quiz?")) {
       try {
         const response = await fetch(
-          `http://localhost/lms-admin/quizzes/delete_quiz.php`,
+          `http://lms.ennovat.com/lms-admin/quizzes/delete_quiz.php`,
           {
             method: "DELETE",
             credentials: "include",
@@ -140,7 +140,7 @@ export default function Quiz() {
   };
   const handleSendSMS = async (quizId) => {
     try {
-        const response = await fetch("http://localhost/lms-admin/quizzes/sms_leaderboard.php", {
+        const response = await fetch("http://lms.ennovat.com/lms-admin/quizzes/sms_leaderboard.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

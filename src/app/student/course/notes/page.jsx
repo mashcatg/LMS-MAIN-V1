@@ -17,7 +17,7 @@ const NotesPage = () => {
     // Fetch notes from backend
     const fetchNotes = async () => {
       try {
-        const response = await fetch("https://youthsthought.com/lms-backend/student-panel/notes/fetch_notes.php", {
+        const response = await fetch("http://lms.ennovat.com/lms-admin/student-panel/notes/fetch_notes.php", {
           method: "GET",
           credentials: "include",
         });

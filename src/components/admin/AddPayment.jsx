@@ -4,6 +4,7 @@ import ImageUploader from "../ui/ImageUploader";
 import TextEditor from "../ui/texteditor";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "../ui/button";
+import { getApiUrl } from '@/config/apiConfig';
 
 const AddPayment = ({ onPaymentAdd, payment, isEditing, setIsEditing, isSidebarOpen, setIsSidebarOpen }) => {
   const [formData, setFormData] = useState({});
@@ -27,8 +28,8 @@ const AddPayment = ({ onPaymentAdd, payment, isEditing, setIsEditing, isSidebarO
     e.preventDefault();
     
     const endpoint = isEditing 
-      ? `http://localhost/lms-admin/finance/edit_payment.php` 
-      : `http://localhost/lms-admin/finance/create_payment.php`;
+      ? getApiUrl('finance/edit_payment.php') 
+      : getApiUrl('finance/create_payment.php');
   
     try {
       const response = await fetch(endpoint, {

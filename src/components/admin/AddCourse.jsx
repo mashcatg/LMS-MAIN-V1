@@ -73,7 +73,7 @@ const AddCourse = ({ editingCourse, onCourseAdded, onCourseEdited, onClose }) =>
     if (bannerFile) formData.append("course_banner", bannerFile);
 
     try {
-      const url = editingCourse ? "http://localhost/lms-admin/courses/edit_course.php" : "http://localhost/lms-admin/courses/create_course.php";
+      const url = editingCourse ? "http://lms.ennovat.com/lms-admin/courses/edit_course.php" : "http://lms.ennovat.com/lms-admin/courses/create_course.php";
       const response = await fetch(url, {
         method: "POST",
         body: formData,

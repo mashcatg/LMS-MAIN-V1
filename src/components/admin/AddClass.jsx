@@ -24,7 +24,7 @@ const AddClass = ({ onClassAdded, editingClass, setEditingClass, playlistId }) =
 
   useEffect(() => {
     const fetchNotes = async () => {
-      const response = await fetch("http://localhost/lms-admin/notes/fetch_notes.php", {
+      const response = await fetch("http://lms.ennovat.com/lms-admin/notes/fetch_notes.php", {
         credentials: "include",
       });
       const data = await response.json();
@@ -65,7 +65,7 @@ const AddClass = ({ onClassAdded, editingClass, setEditingClass, playlistId }) =
       note_id: selectedNoteIds.join(","), 
     });
 
-    const response = await fetch(`http://localhost/lms-admin/classes/${endpoint}`, {
+    const response = await fetch(`http://lms.ennovat.com/lms-admin/classes/${endpoint}`, {
       method: "POST",
       credentials: "include",
       headers: {

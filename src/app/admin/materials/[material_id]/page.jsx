@@ -45,7 +45,7 @@ export default function MaterialsReceiver({ params }) {
   const fetchReceivers = async () => {
     try {
       const response = await fetch(
-        `http://localhost/lms-admin/materials_receivers/fetch_materials_receivers.php?material_id=${encodeURIComponent(
+        `http://lms.ennovat.com/lms-admin/materials_receivers/fetch_materials_receivers.php?material_id=${encodeURIComponent(
           material_id
         )}`,
         {
@@ -72,7 +72,7 @@ export default function MaterialsReceiver({ params }) {
   const handleMarkAsAttended = async () => {
     try {
       const response = await fetch(
-        "http://localhost/lms-admin/materials_receivers/create_materials_receiver.php",
+        "http://lms.ennovat.com/lms-admin/materials_receivers/create_materials_receiver.php",
         {
           method: "POST",
           headers: {
@@ -103,7 +103,7 @@ export default function MaterialsReceiver({ params }) {
     if (window.confirm("Are you sure you want to delete this receiver?")) {
       try {
         const response = await fetch(
-          `http://localhost/lms-admin/materials_receivers/delete_materials_receiver.php?id=${receiverId}`,
+          `http://lms.ennovat.com/lms-admin/materials_receivers/delete_materials_receiver.php?id=${receiverId}`,
           {
             method: "DELETE",
             credentials: "include",

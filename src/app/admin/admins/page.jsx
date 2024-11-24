@@ -51,7 +51,7 @@ export default function Admins() {
   const fetchAdmins = async () => {
     try {
       const response = await fetch(
-        "http://localhost/lms-admin/admins/fetch_admins.php",
+        "http://lms.ennovat.com/lms-admin/admins/fetch_admins.php",
         {
           method: "GET",
           credentials: "include",
@@ -88,7 +88,7 @@ export default function Admins() {
   const handleDelete = async (adminId) => {
     try {
       const response = await fetch(
-        `http://localhost/lms-admin/admins/delete_admin.php`,
+        `http://lms.ennovat.com/lms-admin/admins/delete_admin.php`,
         {
           method: "DELETE",
           headers: {

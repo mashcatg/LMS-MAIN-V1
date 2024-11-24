@@ -37,7 +37,7 @@ export default function AddQuestion({ quizId, onAddedQuestion }) {
     };
     console.log(newQuestion);
     try {
-      const response = await fetch("http://localhost/lms-admin/quizzes/add_question.php", {
+      const response = await fetch("http://lms.ennovat.com/lms-admin/quizzes/add_question.php", {
         method: "POST",
         credentials: "include",
         headers: {

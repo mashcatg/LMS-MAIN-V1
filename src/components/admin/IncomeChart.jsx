@@ -24,7 +24,7 @@ export default function IncomeChart() {
   useEffect(() => {
     const fetchPayments = async () => {
       try {
-        const response = await fetch("http://localhost/lms-admin/dash/fetch_income_dash.php", {
+        const response = await fetch("http://lms.ennovat.com/lms-admin/dash/fetch_income_dash.php", {
           method: "GET",
           credentials: "include",
         });

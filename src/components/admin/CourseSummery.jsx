@@ -7,7 +7,7 @@ export default function CourseCarousel() {
   
   const fetchCourses = async () => {
       try {
-        const response = await fetch("http://localhost/lms-admin/dash/fetch_dash_courses.php", {
+        const response = await fetch("http://lms.ennovat.com/lms-admin/dash/fetch_dash_courses.php", {
           method: "GET",
           credentials: "include",
         });

@@ -97,7 +97,7 @@ function Exams() {
   
     const fetchExams = async () => {
       try {
-        const response = await fetch("http://localhost/lms-admin/exams/fetch_exams.php", {
+        const response = await fetch("http://lms.ennovat.com/lms-admin/exams/fetch_exams.php", {
           method: "GET",
           credentials: "include",
         });
@@ -124,7 +124,7 @@ function Exams() {
     const confirmDelete = confirm("Are you sure you want to delete this exam?");
     if (confirmDelete) {
       try {
-        const response = await fetch(`http://localhost/lms-admin/exams/delete_exam.php?exam_id=${examId}`, {
+        const response = await fetch(`http://lms.ennovat.com/lms-admin/exams/delete_exam.php?exam_id=${examId}`, {
           method: "DELETE",
           credentials: "include",
         });
@@ -144,7 +144,7 @@ function Exams() {
 
   const handleSendSMS = async (examId) => {
     try {
-        const response = await fetch("http://localhost/lms-admin/marks/sms_marks.php", {
+        const response = await fetch("http://lms.ennovat.com/lms-admin/marks/sms_marks.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

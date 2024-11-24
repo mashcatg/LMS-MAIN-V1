@@ -76,7 +76,7 @@ const AddCard = ({ card, onCardAdded, onCardEdited, onClose }) => {
 
         const response = await fetch(
 
-          "http://localhost/lms-admin/courses/fetch_courses.php",
+          "http://lms.ennovat.com/lms-admin/courses/fetch_courses.php",
 
           {
 
@@ -122,9 +122,9 @@ const AddCard = ({ card, onCardAdded, onCardEdited, onClose }) => {
 
     const url = card
 
-      ? "http://localhost/lms-admin/cards/update_card.php"
+      ? "http://lms.ennovat.com/lms-admin/cards/update_card.php"
 
-      : "http://localhost/lms-admin/cards/create_card.php";
+      : "http://lms.ennovat.com/lms-admin/cards/create_card.php";
 
 
 

@@ -24,7 +24,7 @@ const AddRoutine = ({ onBatchAdded, editingRoutine, setEditingRoutine }) => {
 
   useEffect(() => {
     const fetchCourses = async () => {
-      const response = await fetch("http://localhost/lms-admin/courses/fetch_courses.php", {
+      const response = await fetch("http://lms.ennovat.com/lms-admin/courses/fetch_courses.php", {
         credentials: "include",
       });
       const data = await response.json();
@@ -38,7 +38,7 @@ const AddRoutine = ({ onBatchAdded, editingRoutine, setEditingRoutine }) => {
     const fetchBatches = async () => {
       if (selectedCourseIds.length) {
         const courseIds = selectedCourseIds.join(",");
-        const response = await fetch(`http://localhost/lms-admin/batches/fetch_course_batch.php?course_ids=${courseIds}`, {
+        const response = await fetch(`http://lms.ennovat.com/lms-admin/batches/fetch_course_batch.php?course_ids=${courseIds}`, {
           credentials: "include",
         });
         const data = await response.json();
@@ -95,7 +95,7 @@ const AddRoutine = ({ onBatchAdded, editingRoutine, setEditingRoutine }) => {
     }
 
     try {
-      const response = await fetch(editingRoutine ? `http://localhost/lms-admin/routines/update_routine.php?routine_id=${editingRoutine.routine_id}` : "http://localhost/lms-admin/routines/create_routine.php", {
+      const response = await fetch(editingRoutine ? `http://lms.ennovat.com/lms-admin/routines/update_routine.php?routine_id=${editingRoutine.routine_id}` : "http://lms.ennovat.com/lms-admin/routines/create_routine.php", {
         method: "POST",
         body: formData,
         credentials: "include",

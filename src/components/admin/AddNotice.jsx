@@ -19,7 +19,7 @@ const AddNotice = ({ onNoticeAdded }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost/lms-admin/notices/create_notice.php", {
+      const response = await fetch("http://lms.ennovat.com/lms-admin/notices/create_notice.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",

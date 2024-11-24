@@ -104,7 +104,7 @@ export default function Attendance() {
   
     const fetchAttendances = async () => {
       try {
-        const response = await fetch("http://localhost/lms-admin/attendances/fetch_attendances.php", {
+        const response = await fetch("http://lms.ennovat.com/lms-admin/attendances/fetch_attendances.php", {
           method: "GET",
           credentials: "include",
         });
@@ -135,7 +135,7 @@ export default function Attendance() {
     const confirmDelete = confirm("Are you sure you want to delete this attendance?");
     if (confirmDelete) {
       try {
-        const response = await fetch(`http://localhost/lms-admin/attendances/delete_attendance.php?attendance_id=${attendanceId}`, {
+        const response = await fetch(`http://lms.ennovat.com/lms-admin/attendances/delete_attendance.php?attendance_id=${attendanceId}`, {
           method: "DELETE",
           credentials: "include",
         });
@@ -164,7 +164,7 @@ export default function Attendance() {
       formData.append("attendance_date", date);
       formData.append("student_index", studentIndex);
   
-      const response = await fetch("http://localhost/lms-admin/attendances/create_attendance.php", {
+      const response = await fetch("http://lms.ennovat.com/lms-admin/attendances/create_attendance.php", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -191,7 +191,7 @@ export default function Attendance() {
 const fetchCourses = async () => {
   try {
     const response = await fetch(
-      "http://localhost/lms-admin/courses/fetch_courses.php",
+      "http://lms.ennovat.com/lms-admin/courses/fetch_courses.php",
       {
         method: "GET",
         credentials: "include",
@@ -210,7 +210,7 @@ useEffect(() => {
 const fetchBatches = async (courseId) => {
   try {
     const response = await fetch(
-      `http://localhost/lms-admin/batches/fetch_course_batch.php?course_ids=${courseId}`,
+      `http://lms.ennovat.com/lms-admin/batches/fetch_course_batch.php?course_ids=${courseId}`,
       {
         method: "GET",
         credentials: "include",
@@ -247,7 +247,7 @@ const handleSMSUnattendees = async () => {
     formData.append("batch_id", selectedBatch);
     formData.append("date", date);
   
-    const response = await fetch("http://localhost/lms-admin/attendances/sms_unattendees.php", {
+    const response = await fetch("http://lms.ennovat.com/lms-admin/attendances/sms_unattendees.php", {
       method: "POST",
       credentials: "include",
       headers: {

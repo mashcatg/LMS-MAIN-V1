@@ -26,7 +26,7 @@ export default function Home() {
   useEffect(() => {
     const fetchDash = async () => {
       try {
-        const response = await fetch("http://localhost/lms-admin/dash/fetch_dash_widget.php", {
+        const response = await fetch("http://lms.ennovat.com/lms-admin/dash/fetch_dash_widget.php", {
           method: "GET",
           credentials: "include",
         });

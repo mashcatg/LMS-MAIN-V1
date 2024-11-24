@@ -72,7 +72,7 @@ function Courses() {
 
   const fetchCourses = async () => {
     try {
-      const response = await fetch("http://localhost/lms-admin/courses/fetch_courses.php", {
+      const response = await fetch("http://lms.ennovat.com/lms-admin/courses/fetch_courses.php", {
         method: "GET",
         credentials: "include",
       });
@@ -89,7 +89,7 @@ function Courses() {
   };
   const fetchBatches = async () => {
     try {
-      const response = await fetch("http://localhost/lms-admin/batches/fetch_batches.php", {
+      const response = await fetch("http://lms.ennovat.com/lms-admin/batches/fetch_batches.php", {
         method: "GET",
         credentials: "include",
       });
@@ -120,7 +120,7 @@ function Courses() {
     if (confirm("Are you sure you want to delete this course?")) {
       try {
         const response = await fetch(
-          `http://localhost/lms-admin/courses/delete_course.php?course_id=${courseId}`,
+          `http://lms.ennovat.com/lms-admin/courses/delete_course.php?course_id=${courseId}`,
           {
             method: "DELETE",
             credentials: "include",
@@ -143,7 +143,7 @@ function Courses() {
     const fetchEnrollments = async () => {
       try {
         const response = await fetch(
-          "http://localhost/lms-admin/students/fetch_enrollments.php",
+          "http://lms.ennovat.com/lms-admin/students/fetch_enrollments.php",
           {
             method: "GET",
             credentials: "include",
@@ -448,7 +448,7 @@ function Batches() {
   const deleteBatch = async (batchId) => {
     if (window.confirm("Are you sure you want to delete this batch?")) {
       try {
-        const response = await fetch(`http://localhost/lms-admin/batches/delete_batch.php?batch_id=${batchId}`, {
+        const response = await fetch(`http://lms.ennovat.com/lms-admin/batches/delete_batch.php?batch_id=${batchId}`, {
           method: "DELETE",
           credentials: "include",
         });
@@ -472,7 +472,7 @@ function Batches() {
     const fetchBatches = async () => {
       try {
         const response = await fetch(
-          "http://localhost/lms-admin/batches/fetch_batches.php",
+          "http://lms.ennovat.com/lms-admin/batches/fetch_batches.php",
           {
             method: "GET",
             credentials: "include",
@@ -495,7 +495,7 @@ function Batches() {
     const fetchCourses = async () => {
       try {
         const response = await fetch(
-          "http://localhost/lms-admin/courses/fetch_courses.php",
+          "http://lms.ennovat.com/lms-admin/courses/fetch_courses.php",
           {
             method: "GET",
             credentials: "include",
@@ -518,7 +518,7 @@ function Batches() {
     const fetchEnrollments = async () => {
       try {
         const response = await fetch(
-          "http://localhost/lms-admin/students/fetch_enrollments.php",
+          "http://lms.ennovat.com/lms-admin/students/fetch_enrollments.php",
           {
             method: "GET",
             credentials: "include",
@@ -541,7 +541,7 @@ function Batches() {
     const fetchBranches = async () => {
       try {
         const response = await fetch(
-          "http://localhost/lms-admin/branches/fetch_branches.php",
+          "http://lms.ennovat.com/lms-admin/branches/fetch_branches.php",
           {
             method: "GET",
             credentials: "include",
@@ -828,7 +828,7 @@ function Branches() {
   const fetchBranches = async () => {
     try {
       const response = await fetch(
-        "http://localhost/lms-admin/branches/fetch_branches.php",
+        "http://lms.ennovat.com/lms-admin/branches/fetch_branches.php",
         {
           method: "GET",
           credentials: "include",
@@ -852,7 +852,7 @@ function Branches() {
   const deleteBranch = async (branchId) => {
     if (window.confirm("Are you sure you want to delete this branch?")) {
         try {
-            const response = await fetch(`http://localhost/lms-admin/branches/delete_branch.php?branch_id=${branchId}`, {
+            const response = await fetch(`http://lms.ennovat.com/lms-admin/branches/delete_branch.php?branch_id=${branchId}`, {
                 method: "DELETE",
                 credentials: "include",  // Ensure credentials (cookies) are sent
             });
@@ -1025,7 +1025,7 @@ export default function Page() {
     const fetchCourses = async () => {
       try {
         const response = await fetch(
-          "http://localhost/lms-admin/courses/fetch_courses.php",
+          "http://lms.ennovat.com/lms-admin/courses/fetch_courses.php",
           {
             method: "GET",
             credentials: "include",
@@ -1048,7 +1048,7 @@ export default function Page() {
     const fetchBatches = async () => {
       try {
         const response = await fetch(
-          "http://localhost/lms-admin/batches/fetch_batches.php",
+          "http://lms.ennovat.com/lms-admin/batches/fetch_batches.php",
           {
             method: "GET",
             credentials: "include",
@@ -1071,7 +1071,7 @@ export default function Page() {
     const fetchBranches = async () => {
       try {
         const response = await fetch(
-          "http://localhost/lms-admin/branches/fetch_branches.php",
+          "http://lms.ennovat.com/lms-admin/branches/fetch_branches.php",
           {
             method: "GET",
             credentials: "include",

@@ -50,7 +50,7 @@ export default function ChangePassword() {
 
     // Proceed with password change logic (e.g., API call)
     try {
-      const response = await fetch("http://localhost/lms-admin/change-password.php", {
+      const response = await fetch("http://lms.ennovat.com/lms-admin/change-password.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

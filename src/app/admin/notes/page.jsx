@@ -73,7 +73,7 @@ export const description =
     // Fetch notes function, moved outside useEffect
     const fetchNotes = async () => {
       try {
-        const response = await fetch("http://localhost/lms-admin/notes/fetch_notes.php", {
+        const response = await fetch("http://lms.ennovat.com/lms-admin/notes/fetch_notes.php", {
           method: "GET",
           credentials: "include",
         });
@@ -103,7 +103,7 @@ export const description =
       const confirmDelete = confirm("Are you sure you want to delete this note?");
       if (confirmDelete) {
         try {
-          const response = await fetch(`http://localhost/lms-admin/notes/delete_note.php?note_id=${noteId}`, {
+          const response = await fetch(`http://lms.ennovat.com/lms-admin/notes/delete_note.php?note_id=${noteId}`, {
             method: "DELETE",
             credentials: "include",
           });

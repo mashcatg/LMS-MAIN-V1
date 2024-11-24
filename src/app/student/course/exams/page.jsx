@@ -14,7 +14,7 @@ function ExamResults() {
   useEffect(() => {
     const fetchExams = async () => {
       try {
-        const response = await fetch("https://youthsthought.com/lms-backend/student-panel/exams/fetch_exams.php", {
+        const response = await fetch("http://lms.ennovat.com/lms-admin/student-panel/exams/fetch_exams.php", {
           method: "GET",
           credentials: "include",
         });

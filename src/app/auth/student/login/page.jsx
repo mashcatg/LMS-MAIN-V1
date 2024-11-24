@@ -20,7 +20,7 @@ export default function Dashboard() {
     setLoading(true);
     setError(""); // Reset error message
   
-    fetch("https://youthsthought.com/lms-backend/student-panel/student-auth/login.php", {
+    fetch("http://lms.ennovat.com/lms-admin/student-panel/student-auth/login.php", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",  // Ensure proper content type

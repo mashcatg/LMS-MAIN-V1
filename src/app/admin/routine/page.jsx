@@ -43,7 +43,7 @@ export default function Routine() {
 
   const fetchRoutine = async () => {
     try {
-      const response = await fetch("http://localhost/lms-admin/routines/fetch_routines.php", {
+      const response = await fetch("http://lms.ennovat.com/lms-admin/routines/fetch_routines.php", {
         method: "GET",
         credentials: "include",
       });
@@ -82,7 +82,7 @@ export default function Routine() {
     const confirmDelete = confirm("Are you sure you want to delete this routine?");
     if (confirmDelete) {
       try {
-        const response = await fetch(`http://localhost/lms-admin/routines/delete_routine.php?routine_id=${routineId}`, {
+        const response = await fetch(`http://lms.ennovat.com/lms-admin/routines/delete_routine.php?routine_id=${routineId}`, {
           method: "DELETE",
           credentials: "include",
         });

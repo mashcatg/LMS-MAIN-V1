@@ -12,7 +12,7 @@ import { HexColorPicker } from "react-colorful";
 const fetchSettings = async () => {
   try {
     const response = await fetch(
-      "http://localhost/lms-admin/settings/fetch_settings.php",
+      "http://lms.ennovat.com/lms-admin/settings/fetch_settings.php",
       {
         method: "GET",
         credentials: "include",
@@ -334,7 +334,7 @@ const Settings = () => {
 
     try {
         const response = await fetch(
-            "http://localhost/lms-admin/settings/edit_settings.php",
+            "http://lms.ennovat.com/lms-admin/settings/edit_settings.php",
             {
                 method: "POST",
                 credentials: "include",

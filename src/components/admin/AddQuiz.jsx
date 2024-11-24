@@ -40,7 +40,7 @@ const AddQuiz = ({ onQuizAdded, editingQuiz, setEditingQuiz }) => {
     const fetchCourses = async () => {
     try {
       const response = await fetch(
-        "http://localhost/lms-admin/courses/fetch_courses.php",
+        "http://lms.ennovat.com/lms-admin/courses/fetch_courses.php",
         {
           method: "GET",
           credentials: "include",
@@ -111,7 +111,7 @@ const AddQuiz = ({ onQuizAdded, editingQuiz, setEditingQuiz }) => {
     console.log("Submitting quiz data:", newQuizData); // Debugging line
   
     try {
-      const response = await fetch(editingQuiz ? "http://localhost/lms-admin/quizzes/edit_quiz.php" : "http://localhost/lms-admin/quizzes/create_quiz.php", {
+      const response = await fetch(editingQuiz ? "http://lms.ennovat.com/lms-admin/quizzes/edit_quiz.php" : "http://lms.ennovat.com/lms-admin/quizzes/create_quiz.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

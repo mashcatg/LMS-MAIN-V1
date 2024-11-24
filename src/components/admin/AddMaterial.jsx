@@ -62,7 +62,7 @@ const AddMaterial = ({ material, onMaterialAdded, onMaterialEdited, onClose }) =
       try {
         const response = await fetch(
 
-          "http://localhost/lms-admin/courses/fetch_courses.php",
+          "http://lms.ennovat.com/lms-admin/courses/fetch_courses.php",
 
           {
 
@@ -108,9 +108,9 @@ const AddMaterial = ({ material, onMaterialAdded, onMaterialEdited, onClose }) =
 
     const url = material
 
-      ? "http://localhost/lms-admin/materials/edit_material.php"
+      ? "http://lms.ennovat.com/lms-admin/materials/edit_material.php"
 
-      : "http://localhost/lms-admin/materials/create_material.php";
+      : "http://lms.ennovat.com/lms-admin/materials/create_material.php";
 
 
 

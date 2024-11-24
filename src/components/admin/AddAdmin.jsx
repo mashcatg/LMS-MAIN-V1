@@ -47,7 +47,7 @@ const AddAdmin = ({ refreshData, editAdmin, setEditAdmin, isSidebarOpen, closeSi
         const adminData = { name: adminName, number: adminNumber, permissions: selectedPermissions };
 
         try {
-            const url = editAdmin ? `http://localhost/lms-admin/admins/edit_admin.php` : `http://localhost/lms-admin/admins/add_admin.php`;
+            const url = editAdmin ? `http://lms.ennovat.com/lms-admin/admins/edit_admin.php` : `http://lms.ennovat.com/lms-admin/admins/add_admin.php`;
             const method = editAdmin ? "PUT" : "POST";
             const body = editAdmin ? { ...adminData, admin_id: editAdmin.admin_id } : adminData;
 

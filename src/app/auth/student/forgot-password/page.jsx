@@ -23,7 +23,7 @@ export default function ForgotPassword() {
     setSuccess(false); // Reset success message
   
     // Send a request to the request password reset endpoint
-    fetch("https://youthsthought.com/lms-backend/student-panel/student-auth/request_password_reset.php", {
+    fetch("http://lms.ennovat.com/lms-admin/student-panel/student-auth/request_password_reset.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json", // Ensure content type is application/json
