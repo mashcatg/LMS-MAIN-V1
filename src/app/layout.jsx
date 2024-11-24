@@ -4,26 +4,31 @@ import "./globals.scss";
 
 export default function RootLayout({ children }) {
   const [colors, setColors] = useState(null);
-  const sendCurrentURLToBackend = async () => {
-    const currentURL = window.location.href; 
-    try {
-      const response = await fetch("http://lms.ennovat.com/lms-admin/setServiceSession.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-        body: JSON.stringify({ url: currentURL }), // Send the URL in the request body
-      });
 
-      if (!response.ok) {
-        console.error("Failed to send URL to the backend");
+  useEffect(() => {
+    const sendCurrentURLToBackend = async () => {
+      const currentURL = window.location.href; 
+      try {
+        const response = await fetch("http://lms.ennovat.com/lms-admin/setServiceSession.php", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+          body: JSON.stringify({ url: currentURL }), // Send the URL in the request body
+        });
+
+        if (!response.ok) {
+          console.error("Failed to send URL to the backend");
+        }
+      } catch (error) {
+        console.error("Error sending URL to backend:", error);
       }
-    } catch (error) {
-      console.error("Error sending URL to backend:", error);
-    }
-  };
-  useEffect(() => sendCurrentURLToBackend, [])
+    };
+
+    sendCurrentURLToBackend();
+  }, []);
+
   useEffect(() => {
     const fetchCustomColors = async () => {
       try {
@@ -47,8 +52,7 @@ export default function RootLayout({ children }) {
   }, []);
 
   useEffect(() => {
-    if (colors) {
-      // Set the colors as CSS variables dynamically
+    if (colors && typeof window !== 'undefined') {
       document.documentElement.style.setProperty("--background", colors.background_color);
       document.documentElement.style.setProperty("--foreground", colors.text_color);
       document.documentElement.style.setProperty("--primary", colors.primary_color);
@@ -59,7 +63,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className={``}>{children}</body>
+      <body suppressHydrationWarning={true}>{children}</body>
     </html>
   );
 }
