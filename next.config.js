@@ -1,3 +1,3 @@
-module.exports = {
-  basePath: '/app2',
-};
+// module.exports = {
+//   basePath: '/app2',
+// };
