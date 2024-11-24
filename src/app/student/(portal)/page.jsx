@@ -38,7 +38,7 @@ export default function Home() {
  // Fetch notes function, moved outside useEffect
 const fetchCourses = async () => {
   try {
-    const response = await fetch("https://youthsthought.com/lms-backend/student-panel/courses/fetch_all_courses.php", {
+    const response = await fetch("http://lms.ennovat.com/lms-admin/student-panel/courses/fetch_all_courses.php", {
       method: "GET",
       credentials: "include",
     });
@@ -62,7 +62,7 @@ const fetchCourses = async () => {
   // Fetch notes function, moved outside useEffect
 const fetchEnrolledCourses = async () => {
   try {
-    const response = await fetch("https://youthsthought.com/lms-backend/student-panel/courses/fetch_enrolled_courses.php", {
+    const response = await fetch("http://lms.ennovat.com/lms-admin/student-panel/courses/fetch_enrolled_courses.php", {
       method: "GET",
       credentials: "include",
     });

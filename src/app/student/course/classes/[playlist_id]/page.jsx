@@ -27,7 +27,7 @@ const ClassesPage = () => {
     const fetchClasses = async () => {
       try {
         const response = await fetch(
-          `https://youthsthought.com/lms-backend/student-panel/classes/fetch_classes.php?id=${playlistId}`,
+          `http://lms.ennovat.com/lms-admin/student-panel/classes/fetch_classes.php?id=${playlistId}`,
           {
             method: "GET",
             credentials: "include",

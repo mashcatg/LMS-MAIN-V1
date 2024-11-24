@@ -28,7 +28,7 @@ export default function Home() {
  // Fetch notes function, moved outside useEffect
 const fetchDashWidget = async () => {
   try {
-    const response = await fetch("https://youthsthought.com/lms-backend/student-panel/dashWidgets/dash_widgets.php", {
+    const response = await fetch("http://lms.ennovat.com/lms-admin/student-panel/dashWidgets/dash_widgets.php", {
       method: "GET",
       credentials: "include",
     });

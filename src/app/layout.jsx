@@ -7,7 +7,7 @@ export default function RootLayout({ children }) {
   const sendCurrentURLToBackend = async () => {
     const currentURL = window.location.href; 
     try {
-      const response = await fetch("https://youthsthought.com/lms-backend/setServiceSession.php", {
+      const response = await fetch("http://lms.ennovat.com/lms-admin/setServiceSession.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
   useEffect(() => {
     const fetchCustomColors = async () => {
       try {
-        const response = await fetch("https://youthsthought.com/lms-backend/setCustomColor.php", {
+        const response = await fetch("http://lms.ennovat.com/lms-admin/setCustomColor.php", {
           method: "GET",
           credentials: "include",
         });

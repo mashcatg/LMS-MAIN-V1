@@ -12,7 +12,7 @@ export default function EnrolledCourses() {
 // Fetch notes function, moved outside useEffect
 const fetchCourses = async () => {
   try {
-    const response = await fetch("https://youthsthought.com/lms-backend/student-panel/courses/fetch_all_courses.php", {
+    const response = await fetch("http://lms.ennovat.com/lms-admin/student-panel/courses/fetch_all_courses.php", {
       method: "GET",
       credentials: "include",
     });
@@ -34,7 +34,7 @@ const fetchCourses = async () => {
   }, []);
   const fetchEnrolledCourses = async () => {
     try {
-      const response = await fetch("https://youthsthought.com/lms-backend/student-panel/courses/fetch_enrolled_courses.php", {
+      const response = await fetch("http://lms.ennovat.com/lms-admin/student-panel/courses/fetch_enrolled_courses.php", {
         method: "GET",
         credentials: "include",
       });
@@ -57,7 +57,7 @@ const fetchCourses = async () => {
   }, [])
   const handleOpenPortal = async (course_id) => {
     try {
-      const response = await fetch("https://youthsthought.com/lms-backend/student-panel/courses/set_course.php", {
+      const response = await fetch("http://lms.ennovat.com/lms-admin/student-panel/courses/set_course.php", {
         method: "POST",
         credentials: "include", // to send cookies
         headers: {

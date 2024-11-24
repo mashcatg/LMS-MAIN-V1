@@ -10,7 +10,7 @@ export default function ClassPlaylists() {
   
 const fetchPlaylists = async () => {
   try {
-    const response = await fetch("https://youthsthought.com/lms-backend/student-panel/classes/fetch_playlists.php", {
+    const response = await fetch("http://lms.ennovat.com/lms-admin/student-panel/classes/fetch_playlists.php", {
       method: "GET",
       credentials: "include",
     });

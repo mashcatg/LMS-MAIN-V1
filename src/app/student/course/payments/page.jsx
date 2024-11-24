@@ -17,7 +17,7 @@ export default function Page() {
     const fetchPayments = async () => {
       try {
         const response = await fetch(
-          "https://youthsthought.com/lms-backend/student-panel/payments/fetch_payments.php"
+          "http://lms.ennovat.com/lms-admin/student-panel/payments/fetch_payments.php"
         );
 
         if (!response.ok) {

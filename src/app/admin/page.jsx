@@ -18,7 +18,6 @@ import WelcomeCard from "@/components/admin/WelcomeCard";
 import CourseSummary from "@/components/admin/CourseSummery";
 import IncomeChart from "@/components/admin/IncomeChart";
 import ExpenseChart from "@/components/admin/ExpenseChart";
-import { exit } from "process";
 import { useRouter } from "next/navigation";
 export default function Home() {
   const [dash, setDash] = useState([]);

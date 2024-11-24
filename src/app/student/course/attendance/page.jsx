@@ -13,7 +13,7 @@ export default function AttendancePage() {
   useEffect(() => {
     const fetchAttendance = async () => {
       try {
-        const response = await fetch("https://youthsthought.com/lms-backend/student-panel/attendance/fetch_attendances.php", {
+        const response = await fetch("http://lms.ennovat.com/lms-admin/student-panel/attendance/fetch_attendances.php", {
           method: "GET",
           credentials: "include", // Ensure that session is respected
         });

@@ -17,7 +17,7 @@ const ClassDetailPage = ({ params }) => {
     const fetchClassDetails = async () => {
       try {
         const response = await fetch(
-          `https://youthsthought.com/lms-backend/student-panel/classes/fetch_class_details.php?playlist_id=${playlist_id}&class_id=${class_id}`,
+          `http://lms.ennovat.com/lms-admin/student-panel/classes/fetch_class_details.php?playlist_id=${playlist_id}&class_id=${class_id}`,
           {
             method: "GET",
             credentials: "include",
